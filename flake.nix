@@ -26,7 +26,7 @@
 		{
 			nixosConfigurations = {
 				macbookpro = nixpkgs.lib.nixosSystem {
-					specialArgs = {inherit inputs system;};
+					specialArgs = {inherit inputs system self;};
 
 					modules = [./hosts/macbookpro/default.nix];
 				};

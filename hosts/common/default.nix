@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ...}:
+{ inputs, config, pkgs, lib, self, ...}:
 
 {
 	imports = [
@@ -8,7 +8,7 @@
 	nix.settings.experimental-features = ["nix-command" "flakes"];
 
 	home-manager = {
-		extraSpecialArgs = { inherit inputs; };
+		extraSpecialArgs = { inherit inputs self; };
 		users = {
 		g0at = import ./home.nix;
 		};

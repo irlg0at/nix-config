@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "g0at nixos config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -19,14 +19,14 @@
 		in
 		{
 			nixosConfigurations = {
-				g0at = nixpkgs.lib.nixosSystem {
+				macbookpro = nixpkgs.lib.nixosSystem {
 					specialArgs = {inherit system;};
 
-					modules = [./nixos/configuration.nix];
+					modules = [./hosts/macbookpro/default.nix];
 				};
 
 			};
 
 		};
 
-  	}
+}

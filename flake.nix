@@ -10,7 +10,7 @@
 			system = "x86_64-linux";
 
 			pkgs = import nixpkgs {
-				inherit system
+				inherit system;
 
 				config = {
 					allowUnfree = true;
@@ -22,12 +22,11 @@
 				g0at = nixpkgs.lib.nixosSystem {
 					specialArgs = {inherit system;};
 
-					modules = [./nixous/configuration.nix]
+					modules = [./nixos/configuration.nix];
 				};
 
 			};
 
 		};
 
-  };
-}
+  	}

@@ -1,5 +1,6 @@
 {self, pkgs, ...}:
 {
+	
   home-manager.users.g0at = { 
     programs.nixvim = {
       enable = true;
@@ -9,6 +10,23 @@
 			globals = {
 				mapleader = " ";
 				maplocaleader = " ";
+			};
+
+			plugins.lsp = {
+				enable = true;
+				servers = {
+					ruff.enable = true;
+					rust-analyzer.enable = true;
+					nixd.enable = true;
+					gopls.enable = true;
+					jsonls.enable = true;
+					html.enable = true;
+					yamlls.enable = true;
+					omnisharp.enable = true;
+					dotls.enable = true;
+					lua-ls.enable = true;
+					cssls.enable = true;
+				};
 			};
 
       opts = {

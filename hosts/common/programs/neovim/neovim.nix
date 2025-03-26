@@ -5,7 +5,6 @@
 		./plugins/blink.nix
 	];
 
-  home-manager.users.g0at = { 
     programs.nixvim = {
       enable = true;
 
@@ -41,5 +40,4 @@
 				syntax = "on";
       };
     };
-  };
 }

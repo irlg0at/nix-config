@@ -1,10 +1,10 @@
 {  ... }:
 {
-  home-manager.users.g0at.programs.nixvim = {
+	programs.nixvim = {
     plugins = {
       blink-cmp = {
         enable = true;
       };
     };
-  };
+	};
 }

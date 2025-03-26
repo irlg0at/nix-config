@@ -1,8 +1,8 @@
-{ inputs, config, pkgs, lib, self, ...}:
+{ inputs,  self, ...}:
 
 {
 	imports = [
-	./programs/neovim.nix
+	./programs/neovim/neovim.nix
 	./programs/fish.nix
 	inputs.home-manager.nixosModules.home-manager
 	];

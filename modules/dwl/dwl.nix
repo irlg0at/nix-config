@@ -3,12 +3,12 @@
 
 	environment.systemPackages = [
     (pkgs.dwl.override {
-      conf = ./dwl/config.h;
+      conf = ./config.h;
     })
 	];
 
 	security.polkit.enable = true;
-	hardware.opengl = {
+	hardware.graphics = {
 		enable = true;
 	};
 }

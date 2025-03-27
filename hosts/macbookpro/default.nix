@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
 			../common/default.nix
 			../../modules/dwl/dwl.nix
+			../../modules/ly/ly.nix
     ];
 
   # Bootloader.

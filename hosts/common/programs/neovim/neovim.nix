@@ -1,8 +1,9 @@
-{...}:
+{inputs,...}:
 {
 	
 	imports = [
-		./plugins/blink.nix
+	inputs.nixvim.homeManagerModules.nixvim	
+	./plugins/blink.nix
 	];
 
     programs.nixvim = {
@@ -40,4 +41,5 @@
 				syntax = "on";
       };
     };
+	
 }

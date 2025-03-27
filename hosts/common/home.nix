@@ -1,6 +1,5 @@
 { inputs, pkgs, ... }: {
-  imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+  imports = [ 
 		./programs/neovim/neovim.nix
 		./programs/fish.nix
     ];

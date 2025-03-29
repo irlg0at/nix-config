@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, lib, config, ...}:
 {
 
 	environment.systemPackages = [
@@ -7,10 +7,22 @@
     })
 	];
 
+	environment.etc = lib.mkIf config.services.displayManager.ly.enable {
+		"ly/sessions/dwl.desktop".text = ''
+			  [Desktop Entry]
+        Name=dwl
+        Comment=dwm for Wayland
+        Exec=dwl
+        Type=Application
+		'';
+	};
+
 	security.polkit.enable = true;
 	hardware.graphics = {
 		enable = true;
 	};
+
+
 }
 
 

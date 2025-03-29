@@ -1,6 +1,10 @@
 {pkgs, lib, config, ...}:
 {
 
+	imports = [
+		./programs/yambar.nix
+	];
+
 	environment.systemPackages = [
     (pkgs.dwl.override {
       conf = ./config.h;

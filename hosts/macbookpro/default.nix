@@ -63,6 +63,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      git
+		 kmonad
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -95,4 +96,14 @@
 		g0at = import ./home.nix;
 		};
 	};
+
+ services.kmonad = {
+ enable = true;
+   keyboards = {
+     myKMonadOutput = {
+       device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+       config = builtins.readFile ./programs/kmonad/config.kbd;
+     };
+   };
+};
 }

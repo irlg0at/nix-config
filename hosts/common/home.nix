@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [ 
+		 inputs.nix-colors.homeManagerModules.default
 		./programs/neovim/neovim.nix
 		./programs/fish.nix
 		./programs/git.nix
@@ -18,5 +19,8 @@
 
   programs.home-manager.enable = true;
 	programs.zoxide.enableFishIntegration= true;
+
+	colorScheme = inputs.nix-colors.colorSchemes.dracula;
+
 
 }

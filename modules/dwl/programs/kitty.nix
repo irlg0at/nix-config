@@ -2,6 +2,6 @@
 {
 	programs.kitty = {
 		enable = true;
-		theme = "dracula";
+		themeFile = "Dracula";
 	};
 }

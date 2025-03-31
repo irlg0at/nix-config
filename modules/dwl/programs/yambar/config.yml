@@ -1,0 +1,178 @@
+# Mostly copied from https://codeberg.org/dnkl/yambar/src/branch/master/examples/configurations/laptop.conf
+# and modified
+
+# fonts we'll be reusing here and there
+std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
+big_font: &big_font Terminess Nerd Font Mono:style=Regular:pixelsize=36
+
+
+bar:
+  location: top
+  height: 28
+  background: 282a36ff
+  margin: 10
+  spacing: 8
+  font: Terminess Nerd Font Mono:style=Regular:pixelsize=22
+
+  left:
+   - dwl:
+       number-of-tags: 9
+       dwl-info-filename: "/home/g0at/.cache/dwltags"
+       name-of-tags: [ 0,1,2,3,4,5,6,7,8 ]
+       content:
+         list:
+           items:
+             - map:
+                 conditions:
+                   # default tag
+                   id == 0: {string: {text: "{layout} {title}", max: 45}}
+                   selected: {string: {text: " {name} "}}
+                   ~empty: {string: {text: "{name} "}}
+                   urgent: {string: {text: "󱞪 {name} 󱞦"}}
+  right:
+    - removables:
+        anchors:
+          drive: &drive { text: }
+          optical: &optical {text: }
+        spacing: 5
+        content:
+          map:
+            conditions:
+              ~mounted:
+                map:
+                  on-click: udisksctl mount -b {device}
+                  conditions:
+                    ~optical: [{string: *drive}, {string: {text: "{label}"}}]
+                    optical: [{string: *optical}, {string: {text: "{label}"}}]
+              mounted:
+                map:
+                  on-click: udisksctl unmount -b {device}
+                  conditions:
+                    ~optical:
+                      - string: {<<: *drive, deco: *std_underline}
+                      - string: {text: "{label}"}
+                    optical:
+                      - string: {<<: *optical, deco: *std_underline}
+                      - string: {text: "{label}"}
+
+    # TODO: Fix this after the issue is closed on github https://codeberg.org/dnkl/yambar/issues/387
+    # - network:
+    #     content:
+    #       map:
+    #         default: {empty: {}}
+    #         conditions:
+    #           name == enp1s0:
+    #             map:
+    #               conditions:
+    #                 ~carrier: {empty: {}}
+    #                 carrier:
+    #                   map:
+    #                     default: {string: {text: , foreground: ffffff66}}
+    #                     conditions:
+    #                       state == up && ipv4 != "": {string: {text: }}
+    # - network:
+    #     poll-interval: 1000
+    #     content:
+    #       map:
+    #         default: {empty: {}}
+    #         conditions:
+    #           name == wlp2s0:
+    #             map:
+    #               default: {string: {text: , foreground: ffffff66}}
+    #               conditions:
+    #                 state == down: {string: {text: , foreground: ff0000ff}}
+    #                 state == up:
+    #                   map:
+    #                     default:
+    #                       - string: {text: }
+    #                       - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s"}
+    #
+    #                     conditions:
+    #                       ipv4 == "":
+    #                         - string: {text: , foreground: ffffff66}
+    #                         - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66}
+
+    - alsa:
+        card: hw:PCH
+        mixer: Master
+        content:
+          map:
+            conditions:
+              ~online: {string: {text: 󰝟, foreground: ff0000ff, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
+              online:
+                map:
+                  on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
+                  conditions:
+                    muted: {string: {text: 󰝟, foreground: ffffff66, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
+                    ~muted:
+                      ramp:
+                        tag: percent
+                        items:
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
+    - backlight:
+        name: intel_backlight
+        content: [ string: {text: }, string: {text: " {percent}%"}]
+    - battery:
+        name: BAT0
+        poll-interval: 30000
+        anchors:
+          discharging: &discharging
+            list:
+              items:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text: 󰁺, foreground: ff0000ff}
+                      - string: {text: 󰁻, foreground: ffa600ff}
+                      - string: {text: 󰁼}
+                      - string: {text: 󰁽}
+                      - string: {text: 󰁾}
+                      - string: {text: 󰁿}
+                      - string: {text: 󰂀}
+                      - string: {text: 󰂁}
+                      - string: {text: 󰂂}
+                      - string: {text: 󰁹, foreground: 00ff00ff}
+                - string: {text: " {capacity}%  {estimate}"}
+        content:
+          map:
+            conditions:
+              state == unknown:
+                <<: *discharging
+              state == discharging:
+                <<: *discharging
+              state == charging:
+                - string: {text: , foreground: 00ff00ff}
+                - string: {text: " {capacity}% {estimate}"}
+              state == full:
+                - string: {text: 󰁹, foreground: 00ff00ff}
+                - string: {text: " {capacity}% full"}
+              state == "not charging":
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text:  󰁺, foreground: ff0000ff}
+                      - string: {text:  󰁻, foreground: ffa600ff}
+                      - string: {text:  󰁼, foreground: 00ff00ff}
+                      - string: {text:  󰁽, foreground: 00ff00ff}
+                      - string: {text:  󰁾, foreground: 00ff00ff}
+                      - string: {text:  󰁿, foreground: 00ff00ff}
+                      - string: {text:  󰂀, foreground: 00ff00ff}
+                      - string: {text:  󰂁, foreground: 00ff00ff}
+                      - string: {text:  󰂂, foreground: 00ff00ff}
+                      - string: {text:  󰁹, foreground: 00ff00ff}
+                - string: {text: " {capacity}%"}
+    - clock:
+        time-format: "%H:%M %Z"
+        content:
+          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=30}
+          - string: {text: " {date}", right-margin: 10}
+          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=31}
+          - string: {text: " {time}"}
+    - label:
+        content:
+          string:
+            on-click: systemctl poweroff
+            text: ""
+          

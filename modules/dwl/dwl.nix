@@ -2,7 +2,6 @@
 {
 
 	imports = [
-		./programs/yambar.nix
 	];
 
 	environment.systemPackages = [

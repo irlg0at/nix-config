@@ -11,5 +11,9 @@
 
   home.packages = with pkgs; [
   	terminus-nerdfont
+		wmname
+		swww
+		brightnessctl
+		waylock
   ];
 }

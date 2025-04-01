@@ -30,6 +30,7 @@
 		yambar &
 		tee ~/.cache/dwltags
 		'')
+		pkgs.alsa-utils
 	];
 
 	environment.etc = lib.mkIf config.services.displayManager.ly.enable {

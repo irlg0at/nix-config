@@ -15,5 +15,14 @@
 		swww
 		brightnessctl
 		waylock
+		dconf
   ];
+
+	gtk = {
+		enable = true;
+		iconTheme = {
+			name = "Dracula";
+			package = pkgs.dracula-theme;
+		};
+	};
 }

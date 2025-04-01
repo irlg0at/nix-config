@@ -5,19 +5,14 @@
 	];
 
 
-	security.rtkit.enable = true;
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-	};
-
-
 	environment.systemPackages = [
-    (pkgs.dwl.override {
-      conf = ./config.h;
-    })
+  (pkgs.dwl.override {
+    configH = ./config.h;
+  }).overrideAttrs (oldAttrs: {
+    patches = [
+      ./patches/vanitygaps-0.7.patch
+    ];
+  })
 		(pkgs.writeScriptBin "launch_dwm.sh" ''
 		#!/bin/sh
 		# Make Java apps run fine
@@ -31,6 +26,7 @@
 		tee ~/.cache/dwltags
 		'')
 		pkgs.alsa-utils
+		pkgs.wl-clipboard
 	];
 
 	environment.etc = lib.mkIf config.services.displayManager.ly.enable {
@@ -47,6 +43,16 @@
 	hardware.graphics = {
 		enable = true;
 	};
+	
+	security.rtkit.enable = true;
+	services.pipewire = {
+		enable = true;
+		alsa.enable = true;
+		alsa.support32Bit = true;
+		pulse.enable = true;
+	};
+
+	programs.xwayland.enable = true;
 
 
 }

@@ -8,6 +8,10 @@
    
     home = {
     packages = with pkgs; [
+			python3
+			unzip
+			cargo
+			gcc
     ];
 
     username = "g0at";

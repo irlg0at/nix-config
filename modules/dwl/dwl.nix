@@ -4,15 +4,22 @@
 	imports = [
 	];
 
+	nixpkgs.overlays = [
+		(final: prev: {
+			dwl = (prev.dwl.override {
+				withCustomConfigH = true;
+				configH = ./config.h;
+			}).overrideAttrs (oldAttrs: {
+				patches = [
+					./patches/vanitygaps-0.7.patch
+				];
+			});
+		})
+	];
+
 
 	environment.systemPackages = [
-  (pkgs.dwl.override {
-    configH = ./config.h;
-  }).overrideAttrs (oldAttrs: {
-    patches = [
-      ./patches/vanitygaps-0.7.patch
-    ];
-  })
+		pkgs.dwl
 		(pkgs.writeScriptBin "launch_dwm.sh" ''
 		#!/bin/sh
 		# Make Java apps run fine

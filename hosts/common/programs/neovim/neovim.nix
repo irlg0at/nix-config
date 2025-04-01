@@ -20,7 +20,11 @@
 				enable = true;
 				servers = {
 					ruff.enable = true;
-					rust-analyzer.enable = true;
+					rust_analyzer = {
+						enable = true;
+						installCargo = true;
+						installRustc = true;
+					};
 					nixd.enable = true;
 					gopls.enable = true;
 					jsonls.enable = true;
@@ -28,7 +32,7 @@
 					yamlls.enable = true;
 					omnisharp.enable = true;
 					dotls.enable = true;
-					lua-ls.enable = true;
+					lua_ls.enable = true;
 					cssls.enable = true;
 				};
 			};

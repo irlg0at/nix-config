@@ -10,7 +10,7 @@
 	fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-  	terminus-nerdfont
+  	nerd-fonts.terminess-ttf	
 		wmname
 		swww
 		brightnessctl

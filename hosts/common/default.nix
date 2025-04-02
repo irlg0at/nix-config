@@ -17,4 +17,9 @@
  	programs.fish.enable = true;
 	nixpkgs.config.allowUnfree = true;
 
+  virtualisation.docker.enable = true;
+	users.users.g0at.extraGroups = [ "docker" ];
+
+
+
 }

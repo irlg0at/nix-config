@@ -34,6 +34,7 @@
 		'')
 		pkgs.alsa-utils
 		pkgs.wl-clipboard
+		pkgs.waylock
 	];
 
 	environment.etc = lib.mkIf config.services.displayManager.ly.enable {
@@ -50,6 +51,7 @@
 	hardware.graphics = {
 		enable = true;
 	};
+	security.pam.services.waylock = {};
 	
 	security.rtkit.enable = true;
 	services.pipewire = {

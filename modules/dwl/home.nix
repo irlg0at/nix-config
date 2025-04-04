@@ -14,7 +14,6 @@
 		wmname
 		swww
 		brightnessctl
-		waylock
 		dconf
 		wlr-randr
   ];

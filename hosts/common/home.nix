@@ -12,6 +12,7 @@
 			unzip
 			cargo
 			gcc
+			gnumake
     ];
 
     username = "g0at";

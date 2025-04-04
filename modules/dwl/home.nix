@@ -16,6 +16,7 @@
 		brightnessctl
 		waylock
 		dconf
+		wlr-randr
   ];
 
 	gtk = {

@@ -1,4 +1,4 @@
-{ inputs,  self, ...}:
+{pkgs, inputs,  self, ...}:
 
 {
 	imports = [
@@ -19,6 +19,17 @@
 
   virtualisation.docker.enable = true;
 	users.users.g0at.extraGroups = [ "docker" ];
+
+	  environment.systemPackages = with pkgs; [
+		(python3.withPackages (ps: with ps; [
+			pwntools
+			pycryptodome
+  ]))
+		wireguard-tools
+		
+
+  ];
+
 
 
 

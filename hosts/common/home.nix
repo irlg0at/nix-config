@@ -8,7 +8,6 @@
    
     home = {
     packages = with pkgs; [
-			python3
 			unzip
 			cargo
 			gcc

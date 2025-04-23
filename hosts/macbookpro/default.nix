@@ -11,6 +11,7 @@
 			../common/default.nix
 			../../modules/dwl/dwl.nix
 			../../modules/ly/ly.nix
+			../../modules/pentest/configuration.nix
     ];
 
   # Bootloader.
@@ -64,6 +65,7 @@
   environment.systemPackages = with pkgs; [
      git
 		 kmonad
+		 qemu
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -105,5 +107,17 @@
        config = builtins.readFile ./programs/kmonad/config.kbd;
      };
    };
-};
+	};
+
+
+	systemd.services."promisc@" = {
+		description = "Set %i interface in promiscuous mode";
+		after = [ "network.target" ];
+		serviceConfig = {
+			Type = "oneshot";
+			ExecStart = "${pkgs.iproute2}/bin/ip link set dev %i promisc on";
+			RemainAfterExit = true;
+		};
+	};
+
 }

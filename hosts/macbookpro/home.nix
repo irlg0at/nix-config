@@ -11,6 +11,9 @@
 				vesktop
 				beeper
 				flameshot
+				teams-for-linux
+				taskwarrior3
+				insync
 			];
 		};
 }

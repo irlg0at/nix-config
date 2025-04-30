@@ -30,6 +30,11 @@
 
 					modules = [./hosts/macbookpro/default.nix];
 				};
+				oven = nixpkgs.lib.nixosSystem {
+					specialArgs = {inherit inputs system;};
+
+					modules = [./hosts/oven/default.nix];
+				};
 
 			};
 

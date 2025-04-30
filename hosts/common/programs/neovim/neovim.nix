@@ -4,6 +4,8 @@
 	imports = [
 	inputs.nixvim.homeManagerModules.nixvim	
 	./plugins/blink.nix
+	./plugins/lualine.nix
+	./plugins/whichkey.nix
 	];
 
     programs.nixvim = {

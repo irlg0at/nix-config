@@ -16,6 +16,7 @@
 		brightnessctl
 		dconf
 		wlr-randr
+		(flameshot.override { enableWlrSupport = true; })
   ];
 
 	gtk = {

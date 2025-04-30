@@ -28,6 +28,7 @@
 		
 		# Kanshi to manage displays
 		kanshi &
+		sleep 0.5
 
 		# Start wallpaper daemon
 		swww-daemon &

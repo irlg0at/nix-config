@@ -9,6 +9,7 @@
 
 			shellAliases = {
 				cd = "z";
+				cat = "bat";
 
 
 			};
@@ -18,6 +19,8 @@
 			enable = true;
 			enableFishIntegration = true;
 		};
+
+		programs.bat.enable = true;
 
 	programs.bash = {
 		enable = true;

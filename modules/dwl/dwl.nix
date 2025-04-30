@@ -29,6 +29,9 @@
 		# Start wallpaper daemon
 		swww-daemon &
 
+		# Kanshi to manage displays
+		kanshi &
+
 		yambar &
 		tee ~/.cache/dwltags
 		'')

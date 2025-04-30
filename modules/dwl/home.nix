@@ -18,6 +18,7 @@
 		dconf
 		wlr-randr
 		(flameshot.override { enableWlrSupport = true; })
+		spotify-player
   ];
 
 	gtk = {
@@ -25,6 +26,16 @@
 		iconTheme = {
 			name = "Dracula";
 			package = pkgs.dracula-theme;
+		};
+
+		theme = {
+			package = pkgs.dracula-theme;
+			name = "Dracula";
+		};
+		
+		cursorTheme = {
+			name = "Simp1e-Dark";
+			package = pkgs.simp1e-cursors;
 		};
 	};
 }

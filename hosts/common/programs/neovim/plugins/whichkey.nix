@@ -2,7 +2,7 @@
 {
 	programs.nixvim = {
     plugins = {
-      whichkey = {
+      which-key = {
         enable = true;
       };
     };

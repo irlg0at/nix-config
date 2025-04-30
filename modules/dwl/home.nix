@@ -5,6 +5,7 @@
 		./programs/kitty.nix
 		./programs/vivaldi.nix
 		./programs/fuzzel.nix
+		./programs/kanshi/kanshi.nix
 	];
 	
 	fonts.fontconfig.enable = true;

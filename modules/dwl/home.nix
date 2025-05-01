@@ -41,7 +41,7 @@
 
 	qt = {
 		enable = true;
-		platformTheme = "gtk";
+		platformTheme.name = "gtk";
 		style.name = "Dracula";
 		style.package = pkgs.dracula-qt5-theme;
 

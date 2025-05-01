@@ -38,4 +38,14 @@
 			package = pkgs.simp1e-cursors;
 		};
 	};
+
+	qt = {
+		enable = true;
+		platformTheme = "gtk";
+		style.name = "Dracula";
+		style.package = pkgs.dracula-qt5-theme;
+
+
+
+	};
 }

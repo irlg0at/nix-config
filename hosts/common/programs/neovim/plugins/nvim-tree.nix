@@ -5,12 +5,13 @@
       nvim-tree = {
         enable = true;
       };
+		web-devicons.enable = true;
 	  };
 		keymaps = [
 			{
 				key = "<leader>n";
 				action = "<cmd>NvimTreeToggle<cr>";
-				desc = "Toggle nvim-tree";
+				options.desc = "Toggle nvim-tree";
 			}
 
 		];

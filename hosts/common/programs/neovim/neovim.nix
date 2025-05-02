@@ -6,6 +6,7 @@
 	./plugins/blink.nix
 	./plugins/lualine.nix
 	./plugins/whichkey.nix
+	./plugins/render-markdown.nix
 	];
 
     programs.nixvim = {

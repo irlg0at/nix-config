@@ -8,6 +8,7 @@
 	./plugins/whichkey.nix
 	./plugins/render-markdown.nix
 	./plugins/mkdnflow.nix
+	./plugins/nvim-tree.nix
 	];
 
     programs.nixvim = {

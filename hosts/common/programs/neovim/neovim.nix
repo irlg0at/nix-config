@@ -7,6 +7,7 @@
 	./plugins/lualine.nix
 	./plugins/whichkey.nix
 	./plugins/render-markdown.nix
+	./plugins/mkdnflow.nix
 	];
 
     programs.nixvim = {

@@ -10,7 +10,7 @@
 	./plugins/mkdnflow.nix
 	./plugins/nvim-tree.nix
 	];
-
+		programs.fish.interactiveShellInit = "set EDITOR nvim";	
     programs.nixvim = {
       enable = true;
 
@@ -50,5 +50,5 @@
 				syntax = "on";
       };
     };
-	
+
 }

@@ -6,6 +6,7 @@
 		./programs/vivaldi.nix
 		./programs/fuzzel.nix
 		./programs/kanshi.nix
+		./programs/ranger.nix
 	];
 	
 	fonts.fontconfig.enable = true;

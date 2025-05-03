@@ -21,19 +21,37 @@
 			}
 			
 			{
-			profile.name = "macbookpro";
-			profile.outputs = 	[
+				profile.name = "macbookpro";
+				profile.outputs = 	[
 					{
-						criteria = "Dell Inc. DELL U3421WE C2BZ653 (DP-1)";
+						criteria = "Dell Inc. DELL U3421WE C2BZ653";
 						position = "0,1080";
 						mode = "3440x1440@60Hz";
 					}
 					{
-						criteria = "AU Optronics 0x243D (eDP-1)";
+						criteria = "AU Optronics 0x243D";
 						position = "0,0";
 						mode = "1920x1080@60Hz";
 					}
 				];
+			}
+
+			{
+				profile.name = "sahara";
+				profile.outputs = [
+					{
+						criteria = "HDMI-1";
+						position = "0,1080";
+						mode = "2560x1440@60Hz";
+					}
+					{
+						criteria = "eDP-1";
+						position = "0,0";
+						mode = "1920x1080@60Hz";
+					}
+				];
+
+
 			}
 		];
 	};

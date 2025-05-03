@@ -33,6 +33,9 @@
 		# Start wallpaper daemon
 		swww-daemon &
 
+		# Start insync
+		insync start &
+
 		yambar &
 		tee ~/.cache/dwltags
 		'')

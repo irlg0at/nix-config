@@ -19,6 +19,22 @@
 					}
 				];
 			}
+			
+			{
+			profile.name = "macbookpro";
+			profile.outputs = 	[
+					{
+						criteria = "Dell Inc. DELL U3421WE C2BZ653 (DP-1)";
+						position = "0,1080";
+						mode = "3440x1440@60Hz";
+					}
+					{
+						criteria = "AU Optronics 0x243D (eDP-1)";
+						position = "0,0";
+						mode = "1920x1080@60Hz";
+					}
+				];
+			}
 		];
 	};
 }

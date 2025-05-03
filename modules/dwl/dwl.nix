@@ -36,6 +36,9 @@
 		# Start insync
 		insync start &
 
+		# Start dunst
+		dunst & 
+
 		yambar &
 		tee ~/.cache/dwltags
 		'')

@@ -7,6 +7,7 @@
 		./programs/fuzzel.nix
 		./programs/kanshi.nix
 		./programs/ranger.nix
+		./programs/dunst.nix
 	];
 	
 	fonts.fontconfig.enable = true;

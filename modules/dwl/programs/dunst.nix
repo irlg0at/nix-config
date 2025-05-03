@@ -1,0 +1,6 @@
+{ ...}:
+{
+	programs.dunst = {
+		enable = true;
+	};
+}

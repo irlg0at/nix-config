@@ -1,6 +1,7 @@
-{pkgs, ...}:
+{inputs, pkgs, ...}:
 {
 	imports = [
+		 inputs.nix-colors.homeManagerModules.default
 		./programs/yambar/yambar.nix
 		./programs/kitty.nix
 		./programs/vivaldi.nix
@@ -9,9 +10,9 @@
 		./programs/ranger.nix
 		./programs/dunst.nix
 	];
-	
+	colorScheme = inputs.nix-colors.colorSchemes.dracula;
 	fonts.fontconfig.enable = true;
-
+ 	
   home.packages = with pkgs; [
   	nerd-fonts.terminess-ttf	
 		wmname

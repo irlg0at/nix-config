@@ -22,6 +22,7 @@
 		wlr-randr
 		(flameshot.override { enableWlrSupport = true; })
 		spotify-player
+		tomato-c
   ];
 
 	gtk = {

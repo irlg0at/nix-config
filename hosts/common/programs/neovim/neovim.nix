@@ -9,6 +9,7 @@
 	./plugins/render-markdown.nix
 	./plugins/mkdnflow.nix
 	./plugins/nvim-tree.nix
+	./plugins/vimtex.nix
 	];
 		programs.fish.interactiveShellInit = "set EDITOR nvim";	
     programs.nixvim = {
@@ -18,7 +19,7 @@
 
 			globals = {
 				mapleader = " ";
-				maplocaleader = " ";
+				maplocalleader = " ";
 			};
 
 			plugins.lsp = {

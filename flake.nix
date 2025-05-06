@@ -26,12 +26,12 @@
 		{
 			nixosConfigurations = {
 				macbookpro = nixpkgs.lib.nixosSystem {
-					specialArgs = {inherit inputs system;};
+					specialArgs = { inherit inputs system; host = "macbookpro";};
 
 					modules = [./hosts/macbookpro/default.nix];
 				};
 				oven = nixpkgs.lib.nixosSystem {
-					specialArgs = {inherit inputs system;};
+					specialArgs = {inherit inputs system; host = "oven";};
 
 					modules = [./hosts/oven/default.nix];
 				};

@@ -1,0 +1,59 @@
+    # TODO: Fix this after the issue is closed on github https://codeberg.org/dnkl/yambar/issues/387
+    # - network:
+    #     content:
+    #       map:
+    #         default: {empty: {}}
+    #         conditions:
+    #           name == enp1s0:
+    #             map:
+    #               conditions:
+    #                 ~carrier: {empty: {}}
+    #                 carrier:
+    #                   map:
+    #                     default: {string: {text: , foreground: ffffff66}}
+    #                     conditions:
+    #                       state == up && ipv4 != "": {string: {text: }}
+    # - network:
+    #     poll-interval: 1000
+    #     content:
+    #       map:
+    #         default: {empty: {}}
+    #         conditions:
+    #           name == wlp2s0:
+    #             map:
+    #               default: {string: {text: , foreground: ffffff66}}
+    #               conditions:
+    #                 state == down: {string: {text: , foreground: ff0000ff}}
+    #                 state == up:
+    #                   map:
+    #                     default:
+    #                       - string: {text: }
+    #                       - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s"}
+    #
+    #                     conditions:
+    #                       ipv4 == "":
+    #                         - string: {text: , foreground: ffffff66}
+    #                         - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66}
+
+    - alsa:
+        card: hw:PCH
+        mixer: Master
+        content:
+          map:
+            conditions:
+              ~online: {string: {text: 󰝟, foreground: ff0000ff, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
+              online:
+                map:
+                  on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
+                  conditions:
+                    muted: {string: {text: 󰝟, foreground: ffffff66, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
+                    ~muted:
+                      ramp:
+                        tag: percent
+                        items:
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
+    - backlight:
+        name: intel_backlight
+        content: [ string: {text: }, string: {text: " {percent}%"}]

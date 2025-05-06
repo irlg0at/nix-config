@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, self, config, pkgs, ... }:
+{ inputs, self, host, pkgs, ... }:
 
 {
   imports =
@@ -98,7 +98,7 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
 	home-manager = {
-		extraSpecialArgs = { inherit inputs self; };
+		extraSpecialArgs = { inherit inputs self host; };
 		users = {
 		g0at = import ./home.nix;
 		};

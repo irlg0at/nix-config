@@ -3,6 +3,7 @@
 		./programs/neovim/neovim.nix
 		./programs/fish.nix
 		./programs/git.nix
+		./programs/tmux.nix
     ];
    
     home = {

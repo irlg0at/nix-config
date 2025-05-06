@@ -36,15 +36,15 @@
     #                         - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66}
 
     - alsa:
-        card: hw:PCH
-        mixer: Master
+        card: hw:G5
+        mixer: Speaker 
         content:
           map:
             conditions:
               ~online: {string: {text: 󰝟, foreground: ff0000ff, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
               online:
                 map:
-                  on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
+                  on-click: /bin/sh -c "amixer -c 2 -q sset Speaker toggle"
                   conditions:
                     muted: {string: {text: 󰝟, foreground: ffffff66, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
                     ~muted:
@@ -54,6 +54,3 @@
                           - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
                           - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
                           - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
-    - backlight:
-        name: intel_backlight
-        content: [ string: {text: }, string: {text: " {percent}%"}]

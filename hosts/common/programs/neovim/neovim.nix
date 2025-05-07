@@ -10,6 +10,7 @@
 	./plugins/mkdnflow.nix
 	./plugins/nvim-tree.nix
 	./plugins/vimtex.nix
+	./plugins/zk.nix
 	];
 		programs.fish.interactiveShellInit = "set EDITOR nvim";	
     programs.nixvim = {
@@ -40,6 +41,7 @@
 					dotls.enable = true;
 					lua_ls.enable = true;
 					cssls.enable = true;
+					zk.enable = true;
 				};
 			};
 

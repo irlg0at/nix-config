@@ -4,6 +4,7 @@
 		./programs/fish.nix
 		./programs/git.nix
 		./programs/tmux.nix
+		./programs/zk.nix
     ];
    
     home = {

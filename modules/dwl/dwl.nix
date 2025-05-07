@@ -45,6 +45,7 @@
 		pkgs.alsa-utils
 		pkgs.wl-clipboard
 		pkgs.waylock
+		pkgs.bluetui
 	];
 
 	environment.etc = lib.mkIf config.services.displayManager.ly.enable {

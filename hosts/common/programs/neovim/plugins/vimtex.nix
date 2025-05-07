@@ -1,9 +1,13 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
 	programs.nixvim = {
     plugins = {
       vimtex = {
         enable = true;
+      	texlivePackage = pkgs.texlive.combine {
+					inherit (pkgs.texlive) scheme-medium
+						appendix
+				;};
 				settings = {
 					view_method = "zathura";
 				};

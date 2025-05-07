@@ -73,7 +73,12 @@
 
 	programs.xwayland.enable = true;
 
-
+	# Enable bluetooth
+	hardware.bluetooth = {
+		enable = true;
+		powerOnBoot = true;
+	};
+	services.blueman.enable = true;
 }
 
 

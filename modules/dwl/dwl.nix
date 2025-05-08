@@ -33,11 +33,16 @@
 		# Start wallpaper daemon
 		swww-daemon &
 
-		# Start insync
-		insync start &
+
 
 		# Start dunst
 		dunst & 
+		
+		# Start insync and check if expired
+		insync start &
+		if insync error list | grep -q "expired"; then
+    	dunstify --appname=Insync -u critical "Insync account expired" "Open Insync and login"
+		fi
 
 		yambar &
 		tee ~/.cache/dwltags

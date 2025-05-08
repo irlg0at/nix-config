@@ -6,6 +6,7 @@
 			global = {
 				frame_color = "#${config.colorScheme.palette.base05}"; 
 				seperate_color = "#${config.colorScheme.palette.base05}"; 
+				monitor = 1;
 			};
 
 			base16_low = {

@@ -11,6 +11,7 @@
 	./plugins/nvim-tree.nix
 	./plugins/vimtex.nix
 	./plugins/zk.nix
+	./plugins/telescope.nix
 	];
 		programs.fish.interactiveShellInit = "set EDITOR nvim";	
     programs.nixvim = {

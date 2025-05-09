@@ -9,6 +9,7 @@
 		./programs/kanshi.nix
 		./programs/ranger.nix
 		./programs/dunst.nix
+		./programs/zathura.nix
 	];
 	colorScheme = inputs.nix-colors.colorSchemes.dracula;
 	fonts.fontconfig.enable = true;

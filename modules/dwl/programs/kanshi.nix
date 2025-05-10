@@ -50,9 +50,25 @@
 						mode = "1920x1080@60Hz";
 					}
 				];
-
-
 			}
+			
+			{
+				profile.name = "sjostrand";
+				profile.outputs = [
+					{
+						criteria = "ASUSTek COMPUTER INC ASUS VP249 K7LMTF133614";
+						position = "1920,0";
+						mode = "1920x1080@60Hz";
+					}
+					{
+						criteria = "eDP-1";
+						position = "0,0";
+						mode = "1920x1080@60Hz";
+					}
+				];
+			}
+
+
 		];
 	};
 }

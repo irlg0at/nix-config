@@ -4,10 +4,7 @@
     plugins = {
       vimtex = {
         enable = true;
-      	texlivePackage = pkgs.texlive.combine {
-					inherit (pkgs.texlive) scheme-medium
-						appendix
-				;};
+      	texlivePackage = pkgs.texlive.combined.scheme-full;
 				settings = {
 					view_method = "zathura";
 				};

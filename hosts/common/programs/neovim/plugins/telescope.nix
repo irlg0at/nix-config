@@ -25,4 +25,5 @@
       };
     };
 	};
+	programs.ripgrep.enable = true;
 }

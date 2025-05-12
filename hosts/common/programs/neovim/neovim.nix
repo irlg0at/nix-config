@@ -14,6 +14,7 @@
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/image.nix
+    ./plugins/ltex-extra.nix
   ];
   programs.fish.interactiveShellInit = "set EDITOR nvim";
   programs.nixvim = {
@@ -46,8 +47,25 @@
         cssls.enable = true;
         zk.enable = true;
 				texlab.enable = true;
+				ltex = {
+					enable = true;
+					settings = {
+						ltex = {
+							language = "en-US";
+						};
+					};
+				};
       };
     };
+		
+		keymaps = [
+			{
+				key = "K";
+				mode = "n";
+				action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+				options.desc = "Show LSP hint";
+			}
+		];
 
     opts = {
       number = true;

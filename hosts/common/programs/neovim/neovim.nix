@@ -65,6 +65,12 @@
 				action = "<cmd>lua vim.diagnostic.open_float()<CR>";
 				options.desc = "Show LSP hint";
 			}
+			{
+				key = "ca";
+				mode = "n";
+				action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+				options.desc = "Code action";
+			}
 		];
 
     opts = {

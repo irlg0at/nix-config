@@ -16,6 +16,7 @@
     ./plugins/image.nix
     ./plugins/ltex-extra.nix
 		./plugins/luasnip/luasnip.nix
+		./plugins/nabla.nix
   ];
   programs.fish.interactiveShellInit = "set EDITOR nvim";
   programs.nixvim = {

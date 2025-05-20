@@ -26,25 +26,28 @@
 		export _JAVA_AWT_WM_NONREPARENTING=1 &
 		wmname LG3D &
 		
-		# Kanshi to manage displays
-		kanshi &
-		sleep 0.5
-
-		# Start wallpaper daemon
-		swww-daemon &
-
-
-
+		# yambar
+		yambar &
+		
 		# Start dunst
 		dunst & 
+
+		# Kanshi to manage displays
+		kanshi &
 		
 		# Start insync and check if expired
-		insync start &
+		insync start --no-daemon &
+		
+		# Sleep for both insync and kanshi
+		sleep 0.5
+
 		if insync error list | grep -q "expired"; then
     	dunstify --appname=Insync -u critical "Insync account expired" "Open Insync and login"
 		fi
 
-		yambar &
+		# Start wallpaper daemon
+		swww-daemon &
+
 		tee ~/.cache/dwltags
 		'')
 		pkgs.alsa-utils

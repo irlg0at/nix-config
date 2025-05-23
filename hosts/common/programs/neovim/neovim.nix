@@ -18,6 +18,7 @@
 		./plugins/luasnip/luasnip.nix
 		./plugins/nabla.nix
 		./plugins/luasnip-latex-snippets.nix
+		./plugins/indent-blankline.nix
   ];
   programs.fish.interactiveShellInit = "set EDITOR nvim";
   programs.nixvim = {

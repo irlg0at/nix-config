@@ -173,7 +173,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_F3,         spawn,          SHCMD("amixer set Master 10%+") },
 	{ MODKEY,                    XKB_KEY_F5,         spawn,          SHCMD("brightnessctl -c backlight -d intel_backlight s 10%-") },
 	{ MODKEY,                    XKB_KEY_F6,         spawn,          SHCMD("brightnessctl -c backlight -d intel_backlight s 10%+") },
-	{ MODKEY,                    XKB_KEY_Print,      spawn,          SHCMD("flameshot gui") },
+	{ MODKEY,                    XKB_KEY_s,          spawn,          SHCMD("flameshot gui") },
 	TAGKEYS(          XKB_KEY_1, XKB_KEY_exclam,                     0),
 	TAGKEYS(          XKB_KEY_2, XKB_KEY_quotedbl,                   1),
 	TAGKEYS(          XKB_KEY_3, XKB_KEY_numbersign,                 2),

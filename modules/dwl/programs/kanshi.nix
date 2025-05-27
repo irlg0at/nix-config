@@ -19,19 +19,33 @@
 					}
 				];
 			}
-			
 			{
 				profile.name = "macbookpro";
+				profile.exec = ["pkill yambar;yambar"];
 				profile.outputs = 	[
 					{
-						criteria = "Dell Inc. DELL U3421WE C2BZ653";
-						position = "0,1080";
+						criteria = "eDP-1";
+						position = "0,0";
+						mode = "1920x1080@60Hz";
+						status = "enable";
+					}
+				];
+			}
+			
+			{
+				profile.name = "guru";
+				profile.exec = ["pkill yambar;yambar"];
+				profile.outputs = 	[
+					{
+						criteria = "Dell Inc. DELL U3421WE 24BZ653";
+						position = "0,0";
 						mode = "3440x1440@60Hz";
 					}
 					{
-						criteria = "AU Optronics 0x243D";
+						criteria = "eDP-1";
 						position = "0,0";
 						mode = "1920x1080@60Hz";
+						status = "disable";
 					}
 				];
 			}

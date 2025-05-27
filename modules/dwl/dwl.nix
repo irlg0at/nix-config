@@ -25,10 +25,7 @@
 		# Make Java apps run fine
 		export _JAVA_AWT_WM_NONREPARENTING=1 &
 		wmname LG3D &
-		
-		# yambar
-		yambar &
-		
+			
 		# Start dunst
 		dunst & 
 

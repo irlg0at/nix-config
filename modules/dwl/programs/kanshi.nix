@@ -4,8 +4,9 @@
 		enable = true;	
 		settings = [
 			{
-			profile.name = "oven";
-			profile.outputs = 	[
+				profile.name = "oven";
+				profile.exec = ["pkill yambar;yambar"];
+				profile.outputs = 	[
 					{
 						criteria = "Samsung Electric Company LC34G55T H4ZT903472";
 						position = "1080,0";

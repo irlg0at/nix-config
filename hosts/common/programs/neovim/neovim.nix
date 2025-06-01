@@ -82,6 +82,7 @@
       tabstop = 2;
       shiftwidth = 2;
       conceallevel = 2;
+			expandtab = true;
       syntax = "on";
     };
   };

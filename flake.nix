@@ -35,6 +35,11 @@
 
 					modules = [./hosts/oven/default.nix];
 				};
+				wsl = nixpkgs.lib.nixosSystem {
+					specialArgs = {inherit inputs system; host = "wsl";};
+
+					modules = [./hosts/wsl/default.nix];
+				};
 
 			};
 

@@ -20,8 +20,9 @@
 					}
 				];
 			}
-			{
-				profile.name = "oven - one screen";
+			
+      {
+				profile.name = "oven_one_screen";
 				profile.exec = ["pkill yambar;yambar"];
 				profile.outputs = 	[
 					{
@@ -31,7 +32,8 @@
 					}
 				];
 			}
-			{
+			
+      {
 				profile.name = "macbookpro";
 				profile.exec = ["pkill yambar;yambar"];
 				profile.outputs = 	[

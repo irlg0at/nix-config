@@ -32,6 +32,11 @@
 	programs.gnupg.agent = {
 		enable = true;
 	};
+ 
+  services.automatic-timezoned.enable = true;
+  services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+  
+  i18n.defaultLocale = "nb_NO.UTF-8";
 
 
 

@@ -20,7 +20,20 @@
 					}
 				];
 			}
-			{
+			
+      {
+				profile.name = "oven_one_screen";
+				profile.exec = ["pkill yambar;yambar"];
+				profile.outputs = 	[
+					{
+						criteria = "Samsung Electric Company LC34G55T H4ZT903472";
+						position = "0,0";
+						mode = "3440x1440@165Hz";
+					}
+				];
+			}
+			
+      {
 				profile.name = "macbookpro";
 				profile.exec = ["pkill yambar;yambar"];
 				profile.outputs = 	[

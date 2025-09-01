@@ -12,6 +12,7 @@
 			}).overrideAttrs (oldAttrs: {
 				patches = [
 					./patches/vanitygaps-0.7.patch
+					./patches/pertag.patch
 				];
 			});
 		})

@@ -53,15 +53,16 @@
 
 			{
 				profile.name = "sahara";
+				profile.exec = ["pkill yambar;yambar"];
 				profile.outputs = [
 					{
-						criteria = "HDMI-1";
-						position = "0,1080";
+						criteria = "Dell Inc. DELL U2715H GH85D49T0LDL";
+						position = "0,0";
 						mode = "2560x1440@60Hz";
 					}
 					{
 						criteria = "eDP-1";
-						position = "0,0";
+						position = "0,1440";
 						mode = "1920x1080@60Hz";
 					}
 				];
@@ -69,6 +70,7 @@
 			
 			{
 				profile.name = "sjostrand";
+				profile.exec = ["pkill yambar;yambar"];
 				profile.outputs = [
 					{
 						criteria = "ASUSTek COMPUTER INC ASUS VP249 K7LMTF133614";

@@ -21,9 +21,12 @@
 		brightnessctl
 		dconf
 		wlr-randr
-		(flameshot.override { enableWlrSupport = true; })
 		spotify-player
 		tomato-c
+    # Trio for taking screenshots
+    grim
+    swappy
+    slurp
   ];
 
 	gtk = {

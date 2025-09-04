@@ -10,8 +10,6 @@
 			shellAliases = {
 				cd = "z";
 				cat = "bat --theme=Dracula";
-
-
 			};
 		};
 

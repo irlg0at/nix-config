@@ -20,6 +20,7 @@
 		./plugins/luasnip-latex-snippets.nix
 		./plugins/indent-blankline.nix
 		./plugins/molten.nix
+		./plugins/jupytext.nix
   ];
   programs.fish.interactiveShellInit = "set EDITOR nvim";
   programs.nixvim = {

@@ -1,7 +1,7 @@
 {inputs, pkgs, host, ...}:
 {
 	imports = [
-		 inputs.nix-colors.homeManagerModules.default
+		 inputs.nix-colors.homeModules.default
 		./programs/yambar/yambar.nix
 		./programs/kitty.nix
 		./programs/vivaldi.nix

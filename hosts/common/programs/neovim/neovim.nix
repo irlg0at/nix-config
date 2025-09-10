@@ -2,7 +2,7 @@
 {
 
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./plugins/blink.nix
     ./plugins/lualine.nix
     ./plugins/whichkey.nix

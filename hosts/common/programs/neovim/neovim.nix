@@ -21,6 +21,7 @@
 		./plugins/indent-blankline.nix
 		./plugins/molten.nix
 		./plugins/jupytext.nix
+		./plugins/quarto.nix
   ];
   programs.fish.interactiveShellInit = "set EDITOR nvim";
   programs.nixvim = {

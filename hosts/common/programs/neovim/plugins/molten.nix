@@ -26,5 +26,14 @@
         wrap_output = false;
       };
     };
+
+    keymaps = [
+			{
+				key = "<leader>os";
+				action = ":noautocmd MoltenEnterOutput<CR>";
+				options.desc = "show/enter output";
+			}
+
+    ];
   };
 }

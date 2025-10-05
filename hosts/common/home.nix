@@ -13,6 +13,7 @@
 			cargo
 			gcc
 			gnumake
+      usbutils
     ];
 
     username = "g0at";

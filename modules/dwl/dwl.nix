@@ -18,15 +18,21 @@
 		})
 	];
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+    config.common.default = "*";
+  };
+
 
 	environment.systemPackages = [
 		pkgs.dwl
 		(pkgs.writeScriptBin "launch_dwm.sh" ''
 		#!/bin/sh
 		# Make Java apps run fine
-		export _JAVA_AWT_WM_NONREPARENTING=1 &
 		wmname LG3D &
-			
+
 		# Start dunst
 		dunst & 
 
@@ -54,7 +60,14 @@
 		pkgs.bluetui
 	];
 
-	environment.etc = lib.mkIf config.services.displayManager.ly.enable {
+	environment.etc = { 
+
+    "xdg-desktop-portal-wlr/config".text = ''
+    [screencast]
+    chooser_type=dmenu
+    chooser_cmd=fuzzel --dmenu
+    '';
+  } // lib.mkIf config.services.displayManager.ly.enable {
 		"ly/sessions/dwl.desktop".text = ''
 			  [Desktop Entry]
         Name=dwl
@@ -62,7 +75,7 @@
         Exec=dwl -s launch_dwm.sh
         Type=Application
 		'';
-	};
+  };
 
 	security.polkit.enable = true;
 	hardware.graphics = {
@@ -86,6 +99,12 @@
 		powerOnBoot = true;
 	};
 	services.blueman.enable = true;
+  
+  environment.variables = {
+    XDG_CURRENT_DESKTOP="sway";
+    _JAVA_AWT_WM_NONREPARENTING=1;
+    XCURSOR_THEME="Dracula-cursors";
+  };
 }
 
 

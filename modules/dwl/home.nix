@@ -13,6 +13,7 @@
 	];
 	colorScheme = inputs.nix-colors.colorSchemes.dracula;
 	fonts.fontconfig.enable = true;
+
  	
   home.packages = with pkgs; [
   	nerd-fonts.terminess-ttf	
@@ -42,12 +43,20 @@
 		};
 		
 		cursorTheme = {
-			name = "Simp1e-Dark";
-			package = pkgs.simp1e-cursors;
+			name = "Dracula-cursors";
+			package = pkgs.dracula-theme;
 		};
 	};
-
-	qt = {
+  
+  home.pointerCursor = {
+    package = pkgs.dracula-theme;
+    name = "Dracula-cursors";
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+	
+  qt = {
 		enable = true;
 		platformTheme.name = "gtk";
 		style.name = "Dracula";

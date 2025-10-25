@@ -11,6 +11,9 @@
 				cd = "z";
 				cat = "bat --theme=Dracula";
 			};
+      interactiveShellInit = ''
+      set -g fish_key_bindings fish_vi_key_bindings
+      '';
 		};
 
 		programs.zoxide = {

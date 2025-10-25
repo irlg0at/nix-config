@@ -9,7 +9,7 @@
 		keymaps = [
 			{
 				key = "<leader>u";
-				action = "<cmd>Undotreetoggle<cr>";
+				action = "<cmd>UndotreeToggle<cr>";
 				options.desc = "Toggle undotree";
 			}
     ];

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
 		programs.zk = {
 			enable = true;
@@ -11,7 +11,18 @@
 				};
 			};
 	};
-		programs.fzf.enable = true;
+
+	
+  programs.fzf.enable = true;
+  programs.pandoc.enable = true;
+  programs.texlive.enable = true;
+
+  home.packages = with pkgs; [
+    python313Packages.weasyprint
+    inter
+    fira-mono
+    fira-code
+  ];
 
 	home.file = {
 		".config/zk/default.md".source = ./default.md;

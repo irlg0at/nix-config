@@ -39,6 +39,7 @@
       enable = true;
       servers = {
         ruff.enable = true;
+        pyright.enable = true;
         rust_analyzer = {
           enable = true;
           installCargo = true;
@@ -68,10 +69,16 @@
 		
 		keymaps = [
 			{
-				key = "K";
+				key = "D";
 				mode = "n";
 				action = "<cmd>lua vim.diagnostic.open_float()<CR>";
-				options.desc = "Show LSP hint";
+				options.desc = "Show LSP diagnostic hint";
+			}
+			{
+				key = "K";
+				mode = "n";
+				action = "<cmd>:lua vim.lsp.buf.hover()<CR>";
+				options.desc = "Show LSP documentation";
 			}
 			{
 				key = "ca";

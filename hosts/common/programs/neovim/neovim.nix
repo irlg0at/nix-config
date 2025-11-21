@@ -56,6 +56,7 @@
         cssls.enable = true;
         zk.enable = true;
 				texlab.enable = true;
+				ccls.enable = true;
 				ltex = {
 					enable = true;
 					settings = {

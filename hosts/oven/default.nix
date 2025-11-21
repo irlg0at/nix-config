@@ -2,8 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, self, host, pkgs, ... }:
+{ config, inputs, self, host, pkgs, ... }:
 
+let 
+
+  rtw89-module = config.boot.kernelPackages.callPackage ./rtw86.nix {};
+
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -107,5 +112,10 @@
 			RemainAfterExit = true;
 		};
 	};
+  hardware.usb-modeswitch.enable = true;
+  boot.blacklistedKernelModules = [ "rtw89_core" "rtw89_pci" ];
+
+  boot.extraModulePackages = [ rtw89-module ];
+  boot.kernelModules = [ "rtw89_core" "rtw89_pci" ];
 
 }

@@ -3,6 +3,7 @@
 	imports = [
 		 inputs.nix-colors.homeManagerModules.default
 		./programs/kitty.nix
+		./programs/waybar.nix
 		./programs/vivaldi.nix
 		./programs/fuzzel.nix
 		./programs/kanshi.nix

@@ -14,13 +14,9 @@ static const float urgentcolor[]           = COLOR(0xff5555ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
 
-/* Variables for vanitygaps */
-static const unsigned int gappih           = 10; /* horiz inner gap between windows */
-static const unsigned int gappiv           = 10; /* vert inner gap between windows */
-static const unsigned int gappoh           = 10; /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov           = 10; /* vert outer gap between windows and screen edge */
 static const int smartgaps                 = 0;  /* 1 means no outer gap when there is only one window */
-static const int monoclegaps               = 0;  /* 1 means outer gaps in monocle layout */
+static int gaps                            = 1;  /* 1 means gaps between windows are added */
+static const unsigned int gappx            = 10; /* gap pixel between windows */
 
 
 
@@ -155,6 +151,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_l,          setmfact,       {.f = +0.05f} },
 	{ MODKEY,                    XKB_KEY_Return,     zoom,           {0} },
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
+  { MODKEY,                    XKB_KEY_g,          togglegaps,     {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_C,          killclient,     {0} },
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                    XKB_KEY_f,          setlayout,      {.v = &layouts[1]} },

@@ -11,8 +11,8 @@
 				configH = ./config.h;
 			}).overrideAttrs (oldAttrs: {
 				patches = [
-					./patches/vanitygaps-0.7.patch
 					./patches/pertag.patch
+					./patches/gaps.patch
 				];
 			});
 		})

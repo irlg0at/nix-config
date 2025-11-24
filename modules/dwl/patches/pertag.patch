@@ -24,11 +24,7 @@ index 145fd01..2f364bc 100644
  	struct wlr_box w; /* window area, layout-relative */
  	struct wl_list layers[4]; /* LayerSurface.link */
  	const Layout *lt[2];
-+	Pertag *pertag;
-	int gappih;           /* horizontal gap between windows */
-	int gappiv;           /* vertical gap between windows */
-	int gappoh;           /* horizontal outer gaps */
-	int gappov;           /* vertical outer gaps */
++ Pertag *pertag;
  	unsigned int seltags;
  	unsigned int sellt;
  	uint32_t tagset[2];

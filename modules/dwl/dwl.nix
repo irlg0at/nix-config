@@ -11,6 +11,8 @@
 				configH = ./config.h;
 			}).overrideAttrs (oldAttrs: {
 				patches = [
+					./patches/ipc.patch
+					./patches/ipcpertag.patch
 					./patches/pertag.patch
 					./patches/gaps.patch
 				];

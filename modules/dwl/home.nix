@@ -2,7 +2,6 @@
 {
 	imports = [
 		 inputs.nix-colors.homeManagerModules.default
-		./programs/yambar/yambar.nix
 		./programs/kitty.nix
 		./programs/vivaldi.nix
 		./programs/fuzzel.nix

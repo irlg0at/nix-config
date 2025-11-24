@@ -32,15 +32,16 @@
 					}
 				];
 			}
-			
+			      
       {
 				profile.name = "macbookpro";
 				profile.exec = ["pkill yambar;yambar"];
 				profile.outputs = 	[
 					{
-						criteria = "eDP-1";
+						criteria = "BOE NE135A1M-NY1 Unknown";
 						position = "0,0";
-						mode = "1920x1080@60Hz";
+						mode = "2880x1920@120Hz";
+            scale = 1.7;
 						status = "enable";
 					}
 				];
@@ -56,10 +57,11 @@
 						mode = "3440x1440@60Hz";
 					}
 					{
-						criteria = "eDP-1";
+						criteria = "BOE NE135A1M-NY1 Unknown";
 						position = "0,0";
-						mode = "1920x1080@60Hz";
-						status = "disable";
+						mode = "2880x1920@120Hz";
+            scale = 1.7;
+						status = "enable";
 					}
 				];
 			}
@@ -74,9 +76,11 @@
 						mode = "2560x1440@60Hz";
 					}
 					{
-						criteria = "eDP-1";
-						position = "0,1440";
-						mode = "1920x1080@60Hz";
+						criteria = "BOE NE135A1M-NY1 Unknown";
+						position = "0,0";
+						mode = "2880x1920@120Hz";
+            scale = 1.7;
+						status = "enable";
 					}
 				];
 			}
@@ -91,9 +95,24 @@
 						mode = "1920x1080@60Hz";
 					}
 					{
+						criteria = "BOE NE135A1M-NY1 Unknown";
+						position = "0,0";
+						mode = "2880x1920@120Hz";
+            scale = 1.7;
+						status = "enable";
+					}
+				];
+			}
+      
+			   {
+				profile.name = "lenovo";
+				profile.exec = ["pkill yambar;yambar"];
+				profile.outputs = 	[
+					{
 						criteria = "eDP-1";
 						position = "0,0";
 						mode = "1920x1080@60Hz";
+						status = "enable";
 					}
 				];
 			}

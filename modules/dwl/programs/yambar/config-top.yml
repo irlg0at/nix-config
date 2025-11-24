@@ -8,11 +8,11 @@ big_font: &big_font Terminess Nerd Font Mono:style=Regular:pixelsize=36
 
 bar:
   location: top
-  height: 28
+  height: 70 
   background: 282a36ff
   margin: 10
   spacing: 8
-  font: Terminess Nerd Font Mono:style=Regular:pixelsize=22
+  font: Terminess Nerd Font Mono:style=Regular:pixelsize=48
 
   left:
    - dwl:

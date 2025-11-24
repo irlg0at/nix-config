@@ -37,29 +37,29 @@
     #                         - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66}
 
     - alsa:
-        card: hw:PCH
+        card: default
         mixer: Master
         content:
           map:
             conditions:
-              ~online: {string: {text: 󰝟, foreground: ff0000ff, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
+              ~online: {string: {text: 󰝟, foreground: ff0000ff, font: Terminess Nerd Font Mono:style=Regular:pixelsize=48}}
               online:
                 map:
                   on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
                   conditions:
-                    muted: {string: {text: 󰝟, foreground: ffffff66, font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}}
+                    muted: {string: {text: 󰝟, foreground: ffffff66, font: Terminess Nerd Font Mono:style=Regular:pixelsize=48}}
                     ~muted:
                       ramp:
                         tag: percent
                         items:
-                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
-                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
-                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=38}
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=68}
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=68}
+                          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=68}
     - backlight:
-        name: intel_backlight
+        name: amdgpu_bl1
         content: [ string: {text: }, string: {text: " {percent}%"}]
     - battery:
-        name: BAT0
+        name: BAT1
         poll-interval: 30000
         anchors:
           discharging: &discharging

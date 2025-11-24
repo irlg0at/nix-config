@@ -1,9 +1,9 @@
     - clock:
         time-format: "%H:%M %Z"
         content:
-          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=30}
+          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=48}
           - string: {text: " {date}", right-margin: 10}
-          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=31}
+          - string: {text: , font: Terminess Nerd Font Mono:style=Regular:pixelsize=55}
           - string: {text: " {time}"}
     - label:
         content:

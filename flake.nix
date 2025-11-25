@@ -1,25 +1,20 @@
 {
   description = "g0at nixos config";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixvim = {
          url = "github:nix-community/nixvim";
          inputs.nixpkgs.follows = "nixpkgs";
     };
-
-	nix-colors.url = "github:misterio77/nix-colors";
-
-
+	  nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, ... } @ inputs:
+  outputs = { nixpkgs, nixos-hardware, ... } @ inputs:
 		let 
 			system = "x86_64-linux";
 		in
@@ -28,7 +23,10 @@
 				macbookpro = nixpkgs.lib.nixosSystem {
 					specialArgs = { inherit inputs system; host = "macbookpro";};
 
-					modules = [./hosts/macbookpro/default.nix];
+					modules = [
+            ./hosts/macbookpro/default.nix
+            nixos-hardware.nixosModules.framework-amd-ai-300-series
+          ];
 				};
 				oven = nixpkgs.lib.nixosSystem {
 					specialArgs = {inherit inputs system; host = "oven";};

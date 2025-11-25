@@ -17,14 +17,10 @@
   # Bootloader.
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      useOSProber = true;
-    };
+    systemd-boot.enable = true;
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "macbookpro"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -112,7 +108,6 @@
    };
 	};
 
-
 	systemd.services."promisc@" = {
 		description = "Set %i interface in promiscuous mode";
 		after = [ "network.target" ];
@@ -122,7 +117,4 @@
 			RemainAfterExit = true;
 		};
 	};
-
-
-
 }

@@ -1,4 +1,7 @@
 {config, ...}:
+let 
+  padding = "0.5rem";
+in
 {
 	programs.waybar = {
 		enable = true;
@@ -8,7 +11,17 @@
         modules-right = ["battery" "temperature" "backlight" "network" "clock"];
       };
     };
+  
     style = ''
+
+      * {
+        font-family: Terminess Nerd Font;
+      }
+
+      .modules-right > widget > * {
+        margin-left: ${padding};
+        margin-right: ${padding};
+      }
 
       window#waybar {
         background: #${config.colorScheme.palette.base00};
@@ -31,6 +44,8 @@
       #tags button.urgent {
         color: #${config.colorScheme.palette.base08};
       }
+
+
       '';
 	};
 }

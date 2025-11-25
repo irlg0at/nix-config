@@ -5,7 +5,7 @@
 		settings = [
 			{
 				profile.name = "oven";
-				profile.exec = ["pkill yambar;yambar"];
+				profile.exec = ["pkill waybar;waybar"];
 				profile.outputs = 	[
 					{
 						criteria = "Samsung Electric Company LC34G55T H4ZT903472";
@@ -23,7 +23,7 @@
 			
       {
 				profile.name = "oven_one_screen";
-				profile.exec = ["pkill yambar;yambar"];
+				profile.exec = ["pkill waybar;waybar"];
 				profile.outputs = 	[
 					{
 						criteria = "Samsung Electric Company LC34G55T H4ZT903472";
@@ -35,7 +35,7 @@
 			      
       {
 				profile.name = "macbookpro";
-				profile.exec = ["pkill yambar;yambar"];
+				profile.exec = ["pkill waybar;waybar"];
 				profile.outputs = 	[
 					{
 						criteria = "BOE NE135A1M-NY1 Unknown";
@@ -49,7 +49,7 @@
 			
 			{
 				profile.name = "guru";
-				profile.exec = ["pkill yambar;yambar"];
+				profile.exec = ["pkill waybar;waybar"];
 				profile.outputs = 	[
 					{
 						criteria = "Dell Inc. DELL U3421WE 24BZ653";
@@ -68,7 +68,7 @@
 
 			{
 				profile.name = "sahara";
-				profile.exec = ["pkill yambar;yambar"];
+				profile.exec = ["pkill waybar;waybar"];
 				profile.outputs = [
 					{
 						criteria = "Dell Inc. DELL U2715H GH85D49T0LDL";
@@ -87,7 +87,7 @@
 			
 			{
 				profile.name = "sjostrand";
-				profile.exec = ["pkill yambar;yambar"];
+				profile.exec = ["pkill waybar;waybar"];
 				profile.outputs = [
 					{
 						criteria = "ASUSTek COMPUTER INC ASUS VP249 K7LMTF133614";
@@ -106,7 +106,7 @@
       
 			   {
 				profile.name = "lenovo";
-				profile.exec = ["pkill yambar;yambar"];
+				profile.exec = ["pkill waybar;waybar"];
 				profile.outputs = 	[
 					{
 						criteria = "eDP-1";

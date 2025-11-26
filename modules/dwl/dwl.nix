@@ -23,8 +23,13 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
-    config.common.default = "*";
+    config = {
+      wlroots = {
+        default = ["gtk"];
+        "org.freedesktop.impl.portal.Screenshot"=["wlr"];
+        "org.freedesktop.impl.portal.ScreenCast"=["wlr"];
+      };
+    };
   };
 
 
@@ -35,26 +40,25 @@
 		# Make Java apps run fine
 		wmname LG3D &
 
+    export XDG_CURRENT_DESKTOP=wlroots 
+    export XDG_SESSION_TYPE=wayland
+    export XDG_SESSION_DESKTOP=wlroots
+
 		# Start dunst
 		dunst & 
+    
+    sleep 0.5
 
 		# Kanshi to manage displays
 		kanshi &
-		
+    
 		# Start insync and check if expired
 		insync start --no-daemon &
-		
-		# Sleep for both insync and kanshi
-		sleep 0.5
-
-		if insync error list | grep -q "expired"; then
-    	dunstify --appname=Insync -u critical "Insync account expired" "Open Insync and login"
-		fi
 
 		# Start wallpaper daemon
 		swww-daemon &
+    exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots 
 
-		tee ~/.cache/dwltags
 		'')
 		pkgs.alsa-utils
 		pkgs.wl-clipboard
@@ -103,7 +107,9 @@
 	services.blueman.enable = true;
   
   environment.variables = {
-    XDG_CURRENT_DESKTOP="sway";
+    XDG_CURRENT_DESKTOP="wlroots";
+    XDG_SESSION_TYPE="wayland";
+    XDG_SESSION_DESKTOP="wlroots";
     _JAVA_AWT_WM_NONREPARENTING=1;
     XCURSOR_THEME="Dracula-cursors";
   };

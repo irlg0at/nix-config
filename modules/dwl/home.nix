@@ -1,7 +1,7 @@
-{inputs, pkgs, host, ...}:
+{ pkgs, ...}:
 {
 	imports = [
-		 inputs.nix-colors.homeManagerModules.default
+    ../nix-colors.nix
 		./programs/kitty.nix
 		./programs/waybar.nix
 		./programs/vivaldi.nix
@@ -11,7 +11,6 @@
 		./programs/dunst.nix
 		./programs/zathura.nix
 	];
-	colorScheme = inputs.nix-colors.colorSchemes.dracula;
 	fonts.fontconfig.enable = true;
 
  	

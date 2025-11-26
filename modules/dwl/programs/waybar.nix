@@ -8,7 +8,7 @@ in
     settings = {
       main = {
         modules-left = ["dwl/tags"];
-        modules-right = ["battery" "temperature" "backlight" "network" "clock"];
+        modules-right = ["battery" "cpu" "temperature" "backlight" "network" "clock"];
       };
     };
   

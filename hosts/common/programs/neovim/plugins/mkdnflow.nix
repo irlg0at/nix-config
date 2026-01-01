@@ -4,7 +4,7 @@
     plugins = {
       mkdnflow = {
         enable = true;
-				extraOptions = {
+				settings = {
 					links = { create_on_follow_failure = false; };
 				};
       };

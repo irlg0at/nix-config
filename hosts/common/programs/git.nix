@@ -2,8 +2,9 @@
 {
 		programs.git = {
 			enable = true;
-
-			userName  = "irlg0at";
-			userEmail = "34748847+irlg0at@users.noreply.github.com";
+      settings.user = {
+			  name  = "irlg0at";
+			  email = "34748847+irlg0at@users.noreply.github.com";
+    };
 	};
 }

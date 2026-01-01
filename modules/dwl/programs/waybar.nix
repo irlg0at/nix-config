@@ -19,8 +19,11 @@ in
       }
 
       .modules-right > widget > * {
-        margin-left: ${padding};
-        margin-right: ${padding};
+        padding-left: ${padding};
+        margin-left: 0;
+        padding-right: ${padding};
+        margin-right: 0;
+        color: #${config.colorScheme.palette.base00};
       }
 
       window#waybar {
@@ -46,6 +49,30 @@ in
       }
 
 
+
+      #battery {
+        background-color: #${config.colorScheme.palette.base0A};
+      }
+      
+      #cpu {
+        background-color: #${config.colorScheme.palette.base0B};
+      }
+      
+      #backlight {
+        background-color: #${config.colorScheme.palette.base0C};
+      }
+      
+      #temperature {
+        background-color: #${config.colorScheme.palette.base0D};
+      }
+      
+      #network {
+        background-color: #${config.colorScheme.palette.base0E};
+      }
+      
+      #clock {
+        background-color: #${config.colorScheme.palette.base0F};
+      }
       '';
 	};
 }

@@ -52,8 +52,8 @@
 		# Kanshi to manage displays
 		kanshi &
     
-		# Start insync and check if expired
-		insync start --no-daemon &
+		# # Start insync and check if expired
+		# insync start --no-daemon &
 
 		# Start wallpaper daemon
 		swww-daemon &

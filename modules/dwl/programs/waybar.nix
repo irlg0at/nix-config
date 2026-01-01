@@ -26,6 +26,8 @@ in
         color: #${config.colorScheme.palette.base00};
       }
 
+
+
       window#waybar {
         background: #${config.colorScheme.palette.base00};
 
@@ -33,7 +35,8 @@ in
 
       #tags button {
         color: #${config.colorScheme.palette.base01};
-        padding: 0 3px;   
+        padding: 0 3px;
+        border-radius: 0;
       }
 
       #tags button.occupied {
@@ -41,7 +44,8 @@ in
       }
 
       #tags button.focused {
-        color: #${config.colorScheme.palette.base09};
+        background-color: #${config.colorScheme.palette.base09};
+        color: #${config.colorScheme.palette.base00};
       }
 
       #tags button.urgent {

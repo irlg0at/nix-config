@@ -91,12 +91,12 @@
 				profile.outputs = [
 					{
 						criteria = "ASUSTek COMPUTER INC ASUS VP249 K7LMTF133614";
-						position = "1920,0";
+						position = "0,0";
 						mode = "1920x1080@60Hz";
 					}
 					{
 						criteria = "BOE NE135A1M-NY1 Unknown";
-						position = "0,0";
+						position = "1920,0";
 						mode = "2880x1920@120Hz";
             scale = 1.7;
 						status = "enable";

@@ -11,7 +11,6 @@
 				vesktop
 				beeper
 				teams-for-linux
-				taskwarrior3
 				insync
 				libreoffice
 			];

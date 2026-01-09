@@ -5,6 +5,7 @@
 		./programs/git.nix
 		./programs/tmux.nix
 		./programs/zk/zk.nix
+    ./programs/taskwarrior.nix
     ];
    
     home = {

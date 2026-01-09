@@ -1,11 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  programs.taskwarrior3 = {
-    enable = true;   
+  programs.taskwarrior = {
+    enable = true;
+    package = pkgs.taskwarrior3;
   };
 
-  programs.taskwarrior-tui = {
-    enable = true;
-  };
+  home.packages = with pkgs; [
+    taskwarrior-tui
+  ];
+
 
 }

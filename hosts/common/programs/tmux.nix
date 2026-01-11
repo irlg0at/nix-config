@@ -19,6 +19,11 @@
 			set -gq allow-passthrough on
 			set -g visual-activity off
 			''
+      + ''
+      bind-key -T copy-mode-vi 'v' send -X begin-selection
+      bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+      ''
+
 			;
 
 	};

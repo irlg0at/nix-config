@@ -13,6 +13,8 @@
 				teams-for-linux
 				insync
 				libreoffice
+        vlc
+        vmware-workstation
 			];
 		};
 }

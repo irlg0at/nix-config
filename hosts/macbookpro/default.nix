@@ -117,4 +117,7 @@
 			RemainAfterExit = true;
 		};
 	};
+  
+  # Enables VM-ware workstation to work
+  virtualisation.vmware.host.enable = true;
 }

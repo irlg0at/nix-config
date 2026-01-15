@@ -23,6 +23,7 @@
 		./plugins/jupytext.nix
 		./plugins/quarto.nix
 		./plugins/undotree.nix
+		./plugins/excalidraw.nix
   ];
   programs.fish.interactiveShellInit = "set EDITOR nvim";
   programs.nixvim = {

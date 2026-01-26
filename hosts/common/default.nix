@@ -37,10 +37,5 @@
   services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
   
   i18n.defaultLocale = "nb_NO.UTF-8";
-
-
-
-
-
-
+  programs.direnv.enable = true;
 }

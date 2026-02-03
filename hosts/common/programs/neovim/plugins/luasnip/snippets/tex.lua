@@ -19,6 +19,7 @@ ls.add_snippets("tex", {
 % Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{xurl}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \title{}
 \author{}
@@ -29,5 +30,6 @@ ls.add_snippets("tex", {
 \maketitle
 % \printbibliography
 \end{document}
-]], {}))
+]], {})),
+s({trig = "ttt", dscr = "Expand to texttt", snippetType="autosnippet"}, { t("\\texttt{"),i(1),t("}")})
 })

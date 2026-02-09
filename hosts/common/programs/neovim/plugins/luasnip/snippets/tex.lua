@@ -9,6 +9,10 @@ ls.add_snippets("tex", {
 \documentclass{article}
 
 \usepackage{float}
+\usepackage{circledsteps}
+\pgfkeys{/csteps/fill color=black}
+\pgfkeys{/csteps/inner color=white}
+
 \usepackage[backend=biber,style=authoryear]{biblatex}
 
 % \addbibresource{references.bib}

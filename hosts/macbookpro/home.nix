@@ -15,6 +15,10 @@
 				libreoffice
         vlc
         vmware-workstation
+        kicad
+        spotify
+        claude-code
+        jabref
 			];
 		};
 }

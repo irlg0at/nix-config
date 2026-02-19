@@ -4,7 +4,7 @@
     ../nix-colors.nix
 		./programs/kitty.nix
 		./programs/waybar.nix
-		./programs/vivaldi.nix
+		./programs/vivaldi/vivaldi.nix
 		./programs/fuzzel.nix
 		./programs/kanshi.nix
 		./programs/ranger.nix

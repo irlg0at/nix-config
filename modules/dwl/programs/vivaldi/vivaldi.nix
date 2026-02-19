@@ -3,8 +3,8 @@
 	programs.vivaldi = {
 		enable = true;
 	};
+  home.packages = [ pkgs.jabref ];
 
-  programs.jabref.enable = true;
   home.file = {
     ".config/vivaldi/NativeMessagingHosts/org.jabref.jabref.json" = {
       recursive = true;

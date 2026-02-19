@@ -7,6 +7,7 @@
       	texlivePackage = pkgs.texlive.combined.scheme-full;
 				settings = {
 					view_method = "zathura";
+          fold_enabled = 1;
 				};
       };
     };

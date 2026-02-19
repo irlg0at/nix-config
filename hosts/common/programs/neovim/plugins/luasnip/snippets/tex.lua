@@ -35,5 +35,25 @@ ls.add_snippets("tex", {
 % \printbibliography
 \end{document}
 ]], {})),
-s({trig = "ttt", dscr = "Expand to texttt", snippetType="autosnippet"}, { t("\\texttt{"),i(1),t("}")})
+s({trig = "ttt", dscr = "Expand to texttt", snippetType="autosnippet"}, { t("\\texttt{"),i(1),t("}")}),
+s({trig = "image", dscr = "Image figure", snippetType="snippet"}, fmta([[
+    \begin{figure}[H]
+     \center
+     \includegraphics[width=\linewidth]{<>}
+     \caption{<>}
+     \label{<>}
+    \end{figure}   
+    ]],{i(1,"path"),i(2,"caption"),i(3,"label")}
+  )),
+
+s({trig = "code", dscr = "Code figure", snippetType="snippet"}, fmta([[
+    \begin{figure}[H]
+      \begin{minted}[fontsize=\footnotesize, escapeinside=||]{<>}
+        <>
+      \end{minted}
+      \caption{<>}
+      \label{<>}
+    \end{figure}
+    ]],{i(1,"type"),i(2,"code"),i(3,"caption"),i(4,"label")}
+  ))
 })

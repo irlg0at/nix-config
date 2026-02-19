@@ -23,7 +23,6 @@
 		./plugins/jupytext.nix
 		./plugins/quarto.nix
 		./plugins/undotree.nix
-		./plugins/excalidraw.nix
   ];
   programs.fish.interactiveShellInit = "set EDITOR nvim";
   programs.nixvim = {
@@ -47,6 +46,7 @@
           installRustc = true;
         };
         nixd.enable = true;
+        ts_ls.enable = true;
         gopls.enable = true;
         jsonls.enable = true;
         html.enable = true;

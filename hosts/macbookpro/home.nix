@@ -18,7 +18,6 @@
         kicad
         spotify
         claude-code
-        jabref
 			];
 		};
 }

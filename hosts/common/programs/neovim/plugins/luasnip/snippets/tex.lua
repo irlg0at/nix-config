@@ -36,6 +36,8 @@ ls.add_snippets("tex", {
 \end{document}
 ]], {})),
 s({trig = "ttt", dscr = "Expand to texttt", snippetType="autosnippet"}, { t("\\texttt{"),i(1),t("}")}),
+s({trig = "subectionletters", dscr = "Change subsections to letters", snippetType="snippet"},
+    { t("\\renewcommand\\thesubsection{\\Alph{subsection}}")}),
 s({trig = "image", dscr = "Image figure", snippetType="snippet"}, fmta([[
     \begin{figure}[H]
      \center

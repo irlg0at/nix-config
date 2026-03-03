@@ -38,6 +38,8 @@ ls.add_snippets("tex", {
 s({trig = "ttt", dscr = "Expand to texttt", snippetType="autosnippet"}, { t("\\texttt{"),i(1),t("}")}),
 s({trig = "subectionletters", dscr = "Change subsections to letters", snippetType="snippet"},
     { t("\\renewcommand\\thesubsection{\\Alph{subsection}}")}),
+s({trig = "subsubsectionroman", dscr = "Change subsubsections to roman numerals", snippetType="snippet"},
+    { t("\\renewcommand{\\thesubsubsection}{\\thesection.\\thesubsection.\\Roman{subsubsection}}")}),
 s({trig = "image", dscr = "Image figure", snippetType="snippet"}, fmta([[
     \begin{figure}[H]
      \center

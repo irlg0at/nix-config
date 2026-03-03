@@ -19,6 +19,7 @@
         spotify
         claude-code
         puddletag
+        ffmpeg
 			];
 		};
 }

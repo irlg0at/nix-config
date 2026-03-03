@@ -18,6 +18,7 @@
         kicad
         spotify
         claude-code
+        puddletag
 			];
 		};
 }

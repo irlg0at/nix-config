@@ -16,7 +16,7 @@
 					{
 						key = "<leader>zn";
 						mode = "n";
-						action = "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>";
+						action = "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>";
 						options.desc = "Zk: New note";
 					}
 					{
@@ -27,9 +27,15 @@
 					}
 					{
 						key = "<leader>zN";
-						mode = "n";
-						action = "<Cmd>ZkNewFromTitleSelection<CR>";
+						mode = "v";
+						action = ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>";
 						options.desc = "Zk: New note from title selection";
+					}
+					{
+						key = "<leader>zC";
+						mode = "v";
+						action = "'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>";
+						options.desc = "Zk: New note from content selection, input title";
 					}
 					{
 						key = "<leader>zf";

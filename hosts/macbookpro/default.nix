@@ -120,4 +120,8 @@
   
   # Enables VM-ware workstation to work
   virtualisation.vmware.host.enable = true;
+
+  # Enable fingerprint for sudo
+  security.pam.services.sudo.fprintAuth = true;
+
 }

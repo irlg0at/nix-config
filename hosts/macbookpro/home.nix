@@ -3,6 +3,7 @@
 		./../common/home.nix
 		./../../modules/dwl/home.nix
 		./../../modules/pentest/home.nix
+    ./../../modules/music_processing.nix
     ];
 	
     home = {
@@ -10,7 +11,7 @@
 				slack
 				vesktop
 				beeper
-				teams-for-linux
+        #teams-for-linux
 				insync
 				libreoffice
         vlc
@@ -18,8 +19,6 @@
         kicad
         spotify
         claude-code
-        puddletag
-        ffmpeg
 			];
 		};
 }

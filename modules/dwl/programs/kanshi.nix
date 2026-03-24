@@ -58,7 +58,7 @@
 					}
 					{
 						criteria = "BOE NE135A1M-NY1 Unknown";
-						position = "0,0";
+						position = "3440,0";
 						mode = "2880x1920@120Hz";
             scale = 1.7;
 						status = "enable";
@@ -77,7 +77,7 @@
 					}
 					{
 						criteria = "BOE NE135A1M-NY1 Unknown";
-						position = "0,0";
+						position = "1920,0";
 						mode = "2880x1920@120Hz";
             scale = 1.7;
 						status = "enable";

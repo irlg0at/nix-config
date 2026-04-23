@@ -13,7 +13,6 @@
 	];
 	fonts.fontconfig.enable = true;
 
- 	
   home.packages = with pkgs; [
   	nerd-fonts.terminess-ttf	
 		wmname
@@ -27,7 +26,11 @@
     grim
     swappy
     slurp
+    # VPN
+    networkmanagerapplet
+    openconnect
   ];
+
 
 	gtk = {
 		enable = true;

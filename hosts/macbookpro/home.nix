@@ -4,6 +4,7 @@
 		./../../modules/dwl/home.nix
 		./../../modules/pentest/home.nix
     ./../../modules/music_processing.nix
+    ./programs/durdraw.nix
     ];
 	
     home = {
@@ -19,6 +20,7 @@
         kicad
         spotify
         claude-code
+        pipx
 			];
 		};
 }

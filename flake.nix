@@ -12,6 +12,7 @@
          inputs.nixpkgs.follows = "nixpkgs";
     };
 	  nix-colors.url = "github:misterio77/nix-colors";
+    durdraw-nix.url = "github:Daaboulex/durdraw-nix";
   };
 
   outputs = { nixpkgs, nixos-hardware, ... } @ inputs:

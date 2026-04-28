@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ config, pkgs, ...}:
 {
 	imports = [
     ../nix-colors.nix
@@ -48,6 +48,8 @@
 			name = "Dracula-cursors";
 			package = pkgs.dracula-theme;
 		};
+
+    gtk4.theme = config.gtk.theme;
 	};
   
   home.pointerCursor = {
@@ -63,8 +65,5 @@
 		platformTheme.name = "gtk";
 		style.name = "Dracula";
 		style.package = pkgs.dracula-qt5-theme;
-
-
-
 	};
 }

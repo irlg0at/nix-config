@@ -1,5 +1,5 @@
 { inputs, pkgs, ... }: {
   home.packages = [
-    inputs.durdraw-nix.packages.${pkgs.system}.default
+    inputs.durdraw-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

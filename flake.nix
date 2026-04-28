@@ -8,8 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-         url = "github:nix-community/nixvim";
-         inputs.nixpkgs.follows = "nixpkgs";
+         url = "github:nix-community/nixvim/nixos-25.11";
     };
 	  nix-colors.url = "github:misterio77/nix-colors";
     durdraw-nix.url = "github:Daaboulex/durdraw-nix";

@@ -7,6 +7,7 @@ in
 {
 
 	imports = [
+    ../wm_system.nix
 	];
 
 	nixpkgs.overlays = [
@@ -87,29 +88,6 @@ in
         Type=Application
 		'';
   };
-
-	security.polkit.enable = true;
-	hardware.graphics = {
-		enable = true;
-	};
-	security.pam.services.waylock = {};
-	
-	security.rtkit.enable = true;
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-	};
-
-	programs.xwayland.enable = true;
-
-	# Enable bluetooth
-	hardware.bluetooth = {
-		enable = true;
-		powerOnBoot = true;
-	};
-	services.blueman.enable = true;
   
   environment.variables = {
     XDG_CURRENT_DESKTOP="wlroots";

@@ -14,7 +14,7 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 			../common/default.nix
-			../../modules/dwl/dwl.nix
+			../../modules/wm/dwl/dwl.nix
 			../../modules/ly/ly.nix
 			../../modules/pentest/configuration.nix
     ];

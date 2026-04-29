@@ -1,4 +1,9 @@
-{pkgs, lib, config, ...}:
+{pkgs, lib, config,inputs, system, ...}:
+let 
+  pkgs-stable = import inputs.nixpkgs_stable {
+    inherit system;
+  };
+in
 {
 
 	imports = [
@@ -6,7 +11,7 @@
 
 	nixpkgs.overlays = [
 		(final: prev: {
-			dwl = (prev.dwl.override {
+			dwl = (pkgs-stable.dwl.override {
 				withCustomConfigH = true;
 				configH = ./config.h;
 			}).overrideAttrs (oldAttrs: {

@@ -7,7 +7,7 @@ in
 		enable = true;
     settings = {
       main = {
-        modules-left = ["dwl/tags"];
+        modules-left = ["dwl/tags" "niri/workspaces" ];
         modules-right = ["battery" "cpu" "temperature" "backlight" "network" "clock"];
       };
     };

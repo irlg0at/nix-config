@@ -2,6 +2,7 @@
   imports = [
 		./../common/home.nix
 		./../../modules/wm/dwl/home.nix
+		./../../modules/wm/niri/home.nix
 		./../../modules/pentest/home.nix
     ./../../modules/music_processing.nix
     ./programs/durdraw.nix

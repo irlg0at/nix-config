@@ -1,69 +1,33 @@
-{ config, pkgs, ...}:
+{  pkgs, ...}:
 {
 	imports = [
-    ../nix-colors.nix
-		./programs/kitty.nix
-		./programs/waybar.nix
-		./programs/vivaldi/vivaldi.nix
-		./programs/fuzzel.nix
-		./programs/kanshi.nix
-		./programs/ranger.nix
-		./programs/dunst.nix
-		./programs/zathura.nix
+    ../../nix-colors.nix
+		../_programs/kitty.nix
+		../_programs/waybar.nix
+		../_programs/vivaldi/vivaldi.nix
+		../_programs/fuzzel.nix
+		../_programs/kanshi.nix
+		../_programs/ranger.nix
+		../_programs/dunst.nix
+		../_programs/zathura.nix
 	];
 	fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
   	nerd-fonts.terminess-ttf	
 		wmname
-		swww
+		awww
 		brightnessctl
 		dconf
 		wlr-randr
 		spotify-player
 		tomato-c
-    # Trio for taking screenshots
-    grim
-    swappy
-    slurp
     # VPN
     networkmanagerapplet
     openconnect
   ];
 
+  xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
-	gtk = {
-		enable = true;
-		iconTheme = {
-			name = "Dracula";
-			package = pkgs.dracula-theme;
-		};
 
-		theme = {
-			package = pkgs.dracula-theme;
-			name = "Dracula";
-		};
-		
-		cursorTheme = {
-			name = "Dracula-cursors";
-			package = pkgs.dracula-theme;
-		};
-
-    gtk4.theme = config.gtk.theme;
-	};
-  
-  home.pointerCursor = {
-    package = pkgs.dracula-theme;
-    name = "Dracula-cursors";
-    size = 24;
-    gtk.enable = true;
-    x11.enable = true;
-  };
-	
-  qt = {
-		enable = true;
-		platformTheme.name = "gtk";
-		style.name = "Dracula";
-		style.package = pkgs.dracula-qt5-theme;
-	};
 }

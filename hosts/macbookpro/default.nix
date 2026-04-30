@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
 			../common/default.nix
 			../../modules/wm/dwl/dwl.nix
+			../../modules/wm/niri/niri.nix
 			../../modules/ly/ly.nix
 			../../modules/pentest/configuration.nix
     ];

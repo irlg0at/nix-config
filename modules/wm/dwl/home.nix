@@ -2,14 +2,14 @@
 {
 	imports = [
     ../../nix-colors.nix
-		./programs/kitty.nix
-		./programs/waybar.nix
-		./programs/vivaldi/vivaldi.nix
-		./programs/fuzzel.nix
-		./programs/kanshi.nix
-		./programs/ranger.nix
-		./programs/dunst.nix
-		./programs/zathura.nix
+		../_programs/kitty.nix
+		../_programs/waybar.nix
+		../_programs/vivaldi/vivaldi.nix
+		../_programs/fuzzel.nix
+		../_programs/kanshi.nix
+		../_programs/ranger.nix
+		../_programs/dunst.nix
+		../_programs/zathura.nix
     ../wm.nix
 	];
 	fonts.fontconfig.enable = true;

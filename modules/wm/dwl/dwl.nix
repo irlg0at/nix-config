@@ -62,7 +62,7 @@ in
 		# insync start --no-daemon &
 
 		# Start wallpaper daemon
-		swww-daemon &
+		awww-daemon &
     exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots 
 
 		'')

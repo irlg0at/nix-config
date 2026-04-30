@@ -17,7 +17,7 @@
   home.packages = with pkgs; [
   	nerd-fonts.terminess-ttf	
 		wmname
-		swww
+		awww
 		brightnessctl
 		dconf
 		wlr-randr

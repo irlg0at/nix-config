@@ -7,7 +7,7 @@ in
 		enable = true;
     settings = {
       main = {
-        modules-left = ["dwl/tags" "niri/workspaces" ];
+        modules-left = [ "niri/workspaces" ];
         modules-right = ["battery" "cpu" "temperature" "backlight" "network" "clock"];
       };
     };
@@ -16,6 +16,13 @@ in
 
       * {
         font-family: Terminess Nerd Font;
+      }
+
+      #workspaces > * {
+        padding-left: ${padding};
+        margin-left: 0;
+        padding-right: ${padding};
+        margin-right: 0;
       }
 
       .modules-right > widget > * {

@@ -1,4 +1,4 @@
-{  pkgs, ...}:
+{ config, pkgs, ...}:
 {
 	imports = [
     ../../nix-colors.nix
@@ -25,9 +25,17 @@
     # VPN
     networkmanagerapplet
     openconnect
+    swaylock
   ];
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
-
-
+  xdg.configFile."niri/colors.kdl".text = ''
+    layout {
+      focus-ring {
+        active-color "#${config.colorScheme.palette.base0A}"
+        inactive-color "#${config.colorScheme.palette.base0E}"
+        urgent-color "#${config.colorScheme.palette.base08}"
+      }
+    }
+    '';
 }

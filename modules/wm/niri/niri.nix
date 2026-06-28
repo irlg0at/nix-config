@@ -17,6 +17,7 @@
     };
   };
 
+	security.pam.services.swaylock = {};
 
 	environment.systemPackages = [
 		pkgs.niri

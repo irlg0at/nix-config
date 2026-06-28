@@ -1,8 +1,6 @@
 {...}:
 {
-
-
-	# Enable bluetooth
+  # Enable bluetooth
 	hardware.bluetooth = {
 		enable = true;
 		powerOnBoot = true;
@@ -13,7 +11,6 @@
 	hardware.graphics = {
 		enable = true;
 	};
-	security.pam.services.waylock = {};
 	
 	security.rtkit.enable = true;
 	services.pipewire = {

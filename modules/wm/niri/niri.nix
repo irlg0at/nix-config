@@ -3,6 +3,8 @@
 	imports = [
     ../wm_system.nix
 	];
+  
+
 
 
   xdg.portal = {
@@ -25,6 +27,7 @@
 		pkgs.wl-clipboard
 		pkgs.waylock
 		pkgs.bluetui
+    pkgs.xwayland-satellite
 	];
 
 	environment.etc = { 

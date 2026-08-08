@@ -21,7 +21,7 @@
         kicad
         spotify
         claude-code
-        pipx
+      #pipx
 			];
 		};
 }

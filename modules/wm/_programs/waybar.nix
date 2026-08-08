@@ -40,26 +40,20 @@ in
 
       }
 
-      #tags button {
+      #workspaces button {
         color: #${config.colorScheme.palette.base01};
-        padding: 0 3px;
         border-radius: 0;
+        padding:0;
       }
 
-      #tags button.occupied {
+      #workspaces button.active {
         color: #${config.colorScheme.palette.base05};
       }
 
-      #tags button.focused {
+      #workspaces button.focused {
         background-color: #${config.colorScheme.palette.base09};
         color: #${config.colorScheme.palette.base00};
       }
-
-      #tags button.urgent {
-        color: #${config.colorScheme.palette.base08};
-      }
-
-
 
       #battery {
         background-color: #${config.colorScheme.palette.base0A};

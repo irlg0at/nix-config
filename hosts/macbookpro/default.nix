@@ -19,6 +19,7 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
+    systemd-boot.configurationLimit = 10;
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -71,7 +72,6 @@
 		 kmonad
 		 qemu
   ];
-  # virtualisation.vmware.host.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

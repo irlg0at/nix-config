@@ -13,6 +13,7 @@
 				teams-for-linux
 				insync
 				libreoffice
+        claude-code
 			];
 		};
 }

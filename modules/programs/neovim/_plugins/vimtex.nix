@@ -1,21 +1,20 @@
 { config, lib, pkgs, ... }:
 {
-	programs.nixvim = {
-    plugins = {
-      vimtex = {
-        enable = true;
-      	texlivePackage = pkgs.texlive.combined.scheme-full;
-				settings = {
-					view_method = "zathura";
-          fold_enabled = 1;
-				};
-      };
+  plugins = {
+    vimtex = {
+      enable = true;
+    	texlivePackage = pkgs.texlive.combined.scheme-full;
+			settings = {
+				view_method = "zathura";
+        fold_enabled = 1;
+			};
     };
+  };
 
-		autoCmd = lib.mkIf config.programs.nixvim.plugins.which-key.enable [{
-			event = "FileType";
-			pattern = ["tex" "latex"];
-			callback.__raw = ''
+	autoCmd = lib.mkIf config.plugins.which-key.enable [{
+		event = "FileType";
+		pattern = ["tex" "latex"];
+		callback.__raw = ''
 				function(event)
 					local wk = require("which-key")
 					wk.add({
@@ -524,6 +523,5 @@
 					})
 				end
 			'';
-			}];
-		};
+		}];
 }

@@ -1,24 +1,23 @@
 {pkgs, ... }:
 {
-	programs.nixvim = {
-    extraPackages = with pkgs; [
-      python3Packages.jupytext
-    ];
-    plugins = {
-      jupytext = {
-        enable = true;
-        settings = {
-        custom_language_formatting = {
-          python = {
-            extension = "md";
-            style = "markdown";
-            force_ft = "markdown";
-            };
+  extraPackages = with pkgs; [
+    python3Packages.jupytext
+  ];
+  plugins = {
+    jupytext = {
+      enable = true;
+      settings = {
+      custom_language_formatting = {
+        python = {
+          extension = "md";
+          style = "markdown";
+          force_ft = "markdown";
           };
         };
       };
     };
-    extraConfigLua = ''
+  };
+  extraConfigLua = ''
       -- Provide a command to create a blank new Python notebook
     -- note: the metadata is needed for Jupytext to understand how to parse the notebook.
     -- if you use another language than Python, you should change it in the template.
@@ -74,5 +73,4 @@
       complete = 'file'
     })
       '';
-  };
 }

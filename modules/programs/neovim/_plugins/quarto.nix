@@ -1,6 +1,5 @@
 {  ... }:
 {
-	programs.nixvim = { 
   autoCmd = [
     {
       event = [ "FileType" ];
@@ -19,39 +18,38 @@
         runner.run_all(true)
       end, { desc = "run all cells of all languages", silent = true })
     '';
-    plugins = {
-      otter.enable = true;
-      quarto = {
-        enable = true;
-        settings = {
-          lspFeatures = {
-              languages = [ "r" "python" "rust" ];
-              chunks = "all";
-              diagnostics = {
-                  enabled = true;
-                  triggers = [ "BufWritePost" ];
-              };
-              completion = {
-                  enabled = true;
-              };
-          };
-          keymap = {
-              hover = "K";
-              definition = "gd";
-              rename = "<leader>rn";
-              references = "gr";
-              format = "<leader>gf";
-          };
-          codeRunner = {
-              enabled = true;
-              default_method = "molten";
-          };
+  plugins = {
+    otter.enable = true;
+    quarto = {
+      enable = true;
+      settings = {
+        lspFeatures = {
+            languages = [ "r" "python" "rust" ];
+            chunks = "all";
+            diagnostics = {
+                enabled = true;
+                triggers = [ "BufWritePost" ];
+            };
+            completion = {
+                enabled = true;
+            };
+        };
+        keymap = {
+            hover = "K";
+            definition = "gd";
+            rename = "<leader>rn";
+            references = "gr";
+            format = "<leader>gf";
+        };
+        codeRunner = {
+            enabled = true;
+            default_method = "molten";
         };
       };
     };
+  };
 
-    files = {
+  files = {
 
-    };
-	};
+  };
 }

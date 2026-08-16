@@ -11,37 +11,10 @@
     nixvim = {
          url = "github:nix-community/nixvim/nixos-25.11";
     };
-	  nix-colors.url = "github:misterio77/nix-colors";
-    durdraw-nix.url = "github:Daaboulex/durdraw-nix";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
+    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
   };
 
-  outputs = { nixpkgs, nixos-hardware, ... } @ inputs:
-		let 
-			system = "x86_64-linux";
-		in
-		{
-			nixosConfigurations = {
-				macbookpro = nixpkgs.lib.nixosSystem {
-					specialArgs = { inherit inputs system; host = "macbookpro";};
-
-					modules = [
-            ./hosts/macbookpro/default.nix
-            nixos-hardware.nixosModules.framework-amd-ai-300-series
-          ];
-				};
-				oven = nixpkgs.lib.nixosSystem {
-					specialArgs = {inherit inputs system; host = "oven";};
-
-					modules = [./hosts/oven/default.nix];
-				};
-				wsl = nixpkgs.lib.nixosSystem {
-					specialArgs = {inherit inputs system; host = "wsl";};
-
-					modules = [./hosts/wsl/default.nix];
-				};
-
-			};
-
-		};
-
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }

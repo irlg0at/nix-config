@@ -1,21 +1,27 @@
-{
-  moduleWithSystem,
-  inputs,
-  ...
-}: {
+{ self, inputs, ... }: {
+  flake.nixosModules.niri = { pkgs, lib, ... }: {
+    programs.niri = {
+      enable = true;
+      package = self.packages.${pkgs.stdenv.hostPlatform.system}.niri;
+    };
+  };
 
-  flake.nixosModules.niri = moduleWithSystem ({
-    self',
-    ...
-  }: {
-    environment.systemPackages = with self'.packages; [
-        niri
-    ];
-  });
-  
-  perSystem = {pkgs, ...}: {
-    packages.niri = inputs.wrappers.wrappers.niri.wrap {
-       # TODO
+  perSystem = { pkgs, lib, self', ... }: {
+    packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
+      inherit pkgs;
+      settings = {
+
+        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+        input.keyboard.xkb.layout = "us,ua";
+
+        layout.gaps = 5;
+
+        binds = {
+          "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+Q".close-window = _:{ };
+        };
+      };
     };
   };
 }

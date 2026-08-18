@@ -5,7 +5,7 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
-    systemd-boot.configurationLimit = 10;
+    systemd-boot.configurationLimit = 3;
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -19,15 +19,15 @@
     ];
   };
 
-  services.kmonad = {
-  enable = true;
-     keyboards = {
-       myKMonadOutput = {
-         device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
-         config = builtins.readFile ./programs/kmonad/config.kbd;
-       };
-     };
-  };
+  # services.kmonad = {
+  # enable = true;
+  #    keyboards = {
+  #      myKMonadOutput = {
+  #        device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+  #        config = builtins.readFile ./programs/kmonad/config.kbd;
+  #      };
+  #    };
+  # };
 
 	# systemd.services."promisc@" = {
 	# 	description = "Set %i interface in promiscuous mode";

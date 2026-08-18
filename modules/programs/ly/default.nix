@@ -10,7 +10,6 @@
 
       settings = {
         vi_mode = true;
-        waylandsessions = "/etc/ly/sessions/";
         animation = "colormix";
       };
     };

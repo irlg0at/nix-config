@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.hackstationConfiguration = {pkgs, ...}: {
+  flake.nixosModules.macbookproConfig = {pkgs, ...}: {
 
   # Bootloader.
   boot.loader = {
@@ -29,15 +29,15 @@
      };
   };
 
-	systemd.services."promisc@" = {
-		description = "Set %i interface in promiscuous mode";
-		after = [ "network.target" ];
-		serviceConfig = {
-			Type = "oneshot";
-			ExecStart = "${pkgs.iproute2}/bin/ip link set dev %i promisc on";
-			RemainAfterExit = true;
-		};
-	};
+	# systemd.services."promisc@" = {
+	# 	description = "Set %i interface in promiscuous mode";
+	# 	after = [ "network.target" ];
+	# 	serviceConfig = {
+	# 		Type = "oneshot";
+	# 		ExecStart = "${pkgs.iproute2}/bin/ip link set dev %i promisc on";
+	# 		RemainAfterExit = true;
+	# 	};
+	# };
   
   # Enables VM-ware workstation to work
   virtualisation.vmware.host.enable = true;

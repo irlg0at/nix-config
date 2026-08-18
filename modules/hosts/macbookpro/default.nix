@@ -7,6 +7,12 @@
     modules = with self.nixosModules; [
       commonHosts
       macbookproConfig
+      macbookproHardwareConfig
+      niri
+      neovim
+      nushell
+      tmux
+      waybar
     ];
   };
 }

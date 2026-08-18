@@ -68,6 +68,12 @@
           "Mod+Shift+7".move-column-to-workspace = 7;
           "Mod+Shift+8".move-column-to-workspace = 8;
           "Mod+Shift+9".move-column-to-workspace = 9;
+
+          # Window Manipulation
+          "Mod+Shift+R".switch-preset-window-height = _:{ };
+          "Mod+Ctrl+R".reset-window-height = _:{ };
+          "Mod+F".maximize-column = _:{ };
+          "Mod+Shift+F".fullscreen-window = _:{ };
         };
       };
     };

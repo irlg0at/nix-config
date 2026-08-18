@@ -4,7 +4,7 @@
   ...
 }: {
 
-  flake.nixosModules.tmux = moduleWithSystem ({
+  flake.nixosModules.waybar = moduleWithSystem ({
     self',
     ...
   }: {

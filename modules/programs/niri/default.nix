@@ -17,7 +17,6 @@
           (lib.getExe pkgs.waybar)
           (lib.getExe' pkgs.awww "awww-daemon")
           (lib.getExe pkgs.dunst)
-          (lib.getExe pkgs.kanshi)
         ];
 
         binds = {

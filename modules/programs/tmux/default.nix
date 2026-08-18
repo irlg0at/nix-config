@@ -14,7 +14,7 @@
   });
   
   perSystem = {pkgs, ...}: {
-    packages.tmux = inputs.wrappers.wrappers.tmux.wrap {
+    packages.tmux = inputs.wrapper-modules.wrappers.tmux.wrap {
       inherit pkgs;
       allowPassthrough = true;
       visualActivity = false;

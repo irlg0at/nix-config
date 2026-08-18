@@ -3,7 +3,7 @@
   plugins = {
     vimtex = {
       enable = true;
-    	texlivePackage = pkgs.texlive.combined.scheme-full;
+    	texlivePackage = (pkgs.texliveMedium.withPackages (ps: with ps;[]));
 			settings = {
 				view_method = "zathura";
         fold_enabled = 1;

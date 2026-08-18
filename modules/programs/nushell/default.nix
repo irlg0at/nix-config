@@ -14,7 +14,7 @@
   });
   
   perSystem = {pkgs, ...}: {
-    packages.nushell = inputs.wrappers.wrappers.nushell.wrap {
+    packages.nushell = inputs.wrapper-modules.wrappers.nushell.wrap {
       inherit pkgs;
        # TODO
     };

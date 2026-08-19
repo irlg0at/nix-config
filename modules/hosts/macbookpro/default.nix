@@ -13,6 +13,9 @@
       nushell
       tmux
       waybar
+      desktop
+      cli
+      git
     ];
   };
 }

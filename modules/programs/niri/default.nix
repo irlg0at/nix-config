@@ -48,7 +48,7 @@
         binds = {
           "Mod+Shift+Return".spawn-sh = lib.getExe self'.packages.kitty;
           "Mod+P".spawn-sh = lib.getExe self'.packages.fuzzel;
-          "Mod+Shift+P".spawn-sh = lib.getExe pkgs.swaylock;
+          "Mod+Shift+P".spawn-sh = lib.getExe self'.packages.swaylock;
           "Mod+Shift+D".spawn-sh = lib.getExe pkgs.nwg-displays;
 
           # Move windows

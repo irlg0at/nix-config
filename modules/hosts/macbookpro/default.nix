@@ -12,6 +12,7 @@
       theme
       kitty
       fuzzel
+      swaylock
       neovim
       nushell
       tmux

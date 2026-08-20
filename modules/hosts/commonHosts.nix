@@ -1,5 +1,5 @@
-{
-  flake.nixosModules.commonHosts = {lib, pkgs, ...}: {
+{ moduleWithSystem, ... }: {
+  flake.nixosModules.commonHosts = moduleWithSystem ({ self', ... }: {lib, pkgs, ...}: {
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   services.xserver.xkb = {
@@ -11,10 +11,10 @@
     isNormalUser = true;
     description = "g0at";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = lib.getExe pkgs.nushell;
+    shell = lib.getExe self'.packages.nushell;
   };
   nixpkgs.config.allowUnfree = true;
   networking.firewall.enable = true;
   system.stateVersion = "24.11"; # Did you read the comment?
-  };
+  });
 }

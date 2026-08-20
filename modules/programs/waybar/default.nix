@@ -18,10 +18,8 @@
       inherit pkgs;
       env.FONTCONFIG_FILE = fonts.fontconfigFile;
       settings = {
-        main = {
-          modules-left = [ "niri/workspaces" ];
-          modules-right = ["battery" "cpu" "temperature" "backlight" "network" "clock"];
-        };
+        modules-left = [ "niri/workspaces" ];
+        modules-right = ["battery" "cpu" "temperature" "backlight" "network" "clock"];
       };
       "style.css".content = ''
         * {

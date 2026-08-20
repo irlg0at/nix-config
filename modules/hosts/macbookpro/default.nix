@@ -9,6 +9,7 @@
       macbookproConfig
       macbookproHardwareConfig
       niri
+      theme
       kitty
       neovim
       nushell

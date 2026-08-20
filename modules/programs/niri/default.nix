@@ -21,7 +21,7 @@
 
         spawn-at-startup = [
           (lib.getExe self'.packages.waybar)
-          (lib.getExe' pkgs.awww "awww-daemon")
+          (lib.getExe self'.packages.wallpaper)
           (lib.getExe pkgs.dunst)
         ];
 

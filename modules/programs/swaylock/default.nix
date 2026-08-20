@@ -16,7 +16,14 @@
   perSystem = {pkgs, scheme, ...}: {
     packages.swaylock = inputs.wrapper-modules.wrappers.swaylock.wrap {
       inherit pkgs;
+      package = pkgs.swaylock-effects;
       settings = with scheme; {
+        screenshots = true;
+        effect-blur = "7x5";
+        effect-vignette = "0.5:0.5";
+        clock = true;
+        fade-in = 0.2;
+        indicator = true;
         indicator-radius = 110;
         indicator-thickness = 8;
         show-failed-attempts = true;

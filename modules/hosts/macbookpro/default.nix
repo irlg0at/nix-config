@@ -21,6 +21,7 @@
       cli
       git
       gns3Overlay
+      inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
     ];
   };
 }

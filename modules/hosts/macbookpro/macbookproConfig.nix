@@ -42,7 +42,9 @@
   
   # Enables VM-ware workstation to work
   virtualisation.vmware.host.enable = true;
-  # Enable fingerprint for sudo
+  # Fingerprint reader. Enabling fprintd flips fprintAuth to true by default
+  # for every PAM service (sudo, swaylock, login, ...), with password fallback.
+  services.fprintd.enable = true;
   security.pam.services.sudo.fprintAuth = true;
   };
 }

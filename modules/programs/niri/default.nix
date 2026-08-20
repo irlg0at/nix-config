@@ -11,20 +11,18 @@
   perSystem = { pkgs, lib, scheme, self', ... }: {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
+      # Output config is managed by nwg-displays, which writes to
+      # ~/.config/niri/monitor.kdl; pull it in (optional so niri is fine
+      # before the file exists) and let it override anything above it.
+      extraSettings = [ { include = [ { optional = true; } "~/.config/niri/monitor.kdl" ]; } ];
       settings = {
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
         input.keyboard.xkb.layout = "no";
-
-        outputs."eDP-1" = {
-          mode = "2880x1920@120.030";
-          position = _: { props = { x = 1280; y = 0; }; };
-        };
 
         spawn-at-startup = [
           (lib.getExe self'.packages.waybar)
           (lib.getExe' pkgs.awww "awww-daemon")
           (lib.getExe pkgs.dunst)
-          (lib.getExe pkgs.kanshi)
         ];
 
         spawn-sh-at-startup = [ "${lib.getExe pkgs.wmname} LG3D" ];
@@ -51,6 +49,7 @@
           "Mod+Shift+Return".spawn-sh = lib.getExe self'.packages.kitty;
           "Mod+P".spawn-sh = lib.getExe pkgs.fuzzel;
           "Mod+Shift+P".spawn-sh = lib.getExe pkgs.swaylock;
+          "Mod+Shift+D".spawn-sh = lib.getExe pkgs.nwg-displays;
 
           # Move windows
           "Mod+Shift+C".close-window = _:{ };

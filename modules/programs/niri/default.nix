@@ -76,6 +76,7 @@
           "Mod+Ctrl+R".reset-window-height = _:{ };
           "Mod+F".maximize-column = _:{ };
           "Mod+Shift+F".fullscreen-window = _:{ };
+          "Mod+Shift+Q".quit = _:{ };
         };
       };
     };

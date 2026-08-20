@@ -16,6 +16,7 @@
       desktop
       cli
       git
+      gns3Overlay
     ];
   };
 }

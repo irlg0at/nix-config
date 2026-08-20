@@ -9,6 +9,9 @@
     {
     environment.systemPackages = with pkgs; [
         ripgrep
+        zathura
+        ranger
+        claude-code
     ];
   };  
 }

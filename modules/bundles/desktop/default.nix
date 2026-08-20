@@ -8,6 +8,7 @@
   }: {
     environment.systemPackages = with pkgs; [
       vivaldi
+      gns3-gui
     ];
   }; 
 }

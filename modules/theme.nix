@@ -1,29 +1,34 @@
 { inputs, ... }:
+let
+  # Single source of truth: switch the whole desktop (base16 colors + GTK +
+  # Qt + icons + cursor) by changing these two.
+  flavor = "mocha"; # mocha | macchiato | frappe | latte (latte is light)
+  accent = "blue";
+
+  schemeYaml = "${inputs.tt-schemes}/base16/catppuccin-${flavor}.yaml";
+  gtkThemeName = "catppuccin-${flavor}-${accent}-standard";
+  kvantumThemeName = "catppuccin-${flavor}-${accent}";
+  cursorThemeName = "catppuccin-${flavor}-dark-cursors";
+  iconThemeName = "Papirus-Dark";
+in
 {
   perSystem = { pkgs, ... }: {
     _module.args.scheme =
-      (pkgs.callPackage inputs.base16.lib { })
-        .mkSchemeAttrs
-          "${inputs.tt-schemes}/base16/catppuccin-mocha.yaml";
+      (pkgs.callPackage inputs.base16.lib { }).mkSchemeAttrs schemeYaml;
   };
 
   flake.nixosModules.theme = { pkgs, ... }:
   let
     gtkTheme = pkgs.catppuccin-gtk.override {
-      accents = [ "blue" ];
-      variant = "mocha";
+      accents = [ accent ];
+      variant = flavor;
       size = "standard";
     };
     kvantumTheme = pkgs.catppuccin-kvantum.override {
-      accent = "blue";
-      variant = "mocha";
+      inherit accent;
+      variant = flavor;
     };
-    cursorTheme = pkgs.catppuccin-cursors.mochaDark;
-
-    gtkThemeName = "catppuccin-mocha-blue-standard";
-    kvantumThemeName = "catppuccin-mocha-blue";
-    iconThemeName = "Papirus-Dark";
-    cursorThemeName = "catppuccin-mocha-dark-cursors";
+    cursorTheme = pkgs.catppuccin-cursors."${flavor}Dark";
   in {
     environment.systemPackages = [
       gtkTheme

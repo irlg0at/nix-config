@@ -11,6 +11,7 @@
       niri
       theme
       kitty
+      fuzzel
       neovim
       nushell
       tmux

@@ -8,21 +8,42 @@
     };
   };
 
-  perSystem = { pkgs, lib, self', ... }: {
+  perSystem = { pkgs, lib, scheme, ... }: {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
         input.keyboard.xkb.layout = "no";
+
+        outputs."eDP-1" = {
+          mode = "2880x1920@120.030";
+          scale = 1;
+          position = _: { props = { x = 1280; y = 0; }; };
+        };
+
         spawn-at-startup = [
           (lib.getExe pkgs.waybar)
           (lib.getExe' pkgs.awww "awww-daemon")
           (lib.getExe pkgs.dunst)
+          (lib.getExe pkgs.kanshi)
         ];
+
+        spawn-sh-at-startup = [ "${lib.getExe pkgs.wmname} LG3D" ];
+
+        environment = {
+          XDG_CURRENT_DESKTOP = "wlroots";
+          XDG_SESSION_TYPE = "wayland";
+          XDG_SESSION_DESKTOP = "wlroots";
+        };
 
         layout = {
           gaps = 16;
-          focus-ring.width = 3;
+          focus-ring = {
+            width = 3;
+            active-color = scheme.withHashtag.base0A;
+            inactive-color = scheme.withHashtag.base0E;
+            urgent-color = scheme.withHashtag.base08;
+          };
         };
 
         prefer-no-csd = _:{ };

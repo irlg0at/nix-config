@@ -9,6 +9,7 @@
       macbookproConfig
       macbookproHardwareConfig
       niri
+      kitty
       neovim
       nushell
       tmux

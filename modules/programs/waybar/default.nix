@@ -13,9 +13,10 @@
     ];
   });
   
-  perSystem = {pkgs, scheme, ...}: {
+  perSystem = {pkgs, scheme, fonts, ...}: {
     packages.waybar = inputs.wrapper-modules.wrappers.waybar.wrap {
       inherit pkgs;
+      env.FONTCONFIG_FILE = fonts.fontconfigFile;
       settings = {
         main = {
           modules-left = [ "niri/workspaces" ];

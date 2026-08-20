@@ -8,7 +8,7 @@
     };
   };
 
-  perSystem = { pkgs, lib, scheme, ... }: {
+  perSystem = { pkgs, lib, scheme, self', ... }: {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
@@ -49,7 +49,7 @@
         prefer-no-csd = _:{ };
 
         binds = {
-          "Mod+Shift+Return".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+Shift+Return".spawn-sh = lib.getExe self'.packages.kitty;
           "Mod+P".spawn-sh = lib.getExe pkgs.fuzzel;
           "Mod+Shift+P".spawn-sh = lib.getExe pkgs.swaylock;
 

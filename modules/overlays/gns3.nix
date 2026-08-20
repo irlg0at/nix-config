@@ -1,4 +1,4 @@
-{ ... }:
+{ self, ... }:
 let
   version = "2.2.61";
 
@@ -41,7 +41,9 @@ let
       # QT_PLUGIN_PATH. Also make kitty (and the telnet client it launches)
       # available so the console command resolves at runtime.
       makeWrapperArgs = (old.makeWrapperArgs or [ ]) ++ [
-        "--prefix PATH : ${final.lib.makeBinPath [ final.kitty final.inetutils ]}"
+        # Use the themed (wrapper-modules) kitty so node consoles share the
+        # global base16 kitty config instead of the unwrapped nixpkgs kitty.
+        "--prefix PATH : ${final.lib.makeBinPath [ self.packages.${final.stdenv.hostPlatform.system}.kitty final.inetutils ]}"
         "--prefix QT_PLUGIN_PATH : ${final.qt6.qtsvg}/${final.qt6.qtbase.qtPluginPrefix}"
       ];
     });

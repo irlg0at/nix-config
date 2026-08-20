@@ -23,7 +23,7 @@
     ./_plugins/undotree.nix
   ];
 
-  colorschemes.dracula.enable = true;
+  colorschemes.catppuccin.enable = true;
 
   globals = {
     mapleader = " ";

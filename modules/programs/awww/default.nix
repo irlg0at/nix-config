@@ -14,7 +14,7 @@
 
         while true; do
           img=$(find "$wallpapers" -type f | shuf -n1)
-          awww img "$img" --transition-type random --transition-fps 60
+          awww img "$img" --transition-type fade --transition-fps 60
           sleep 900
         done
       '';

@@ -17,7 +17,6 @@
       extraSettings = [ { include = [ { optional = true; } "~/.config/niri/monitor.kdl" ]; } ];
       settings = {
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-        input.keyboard.xkb.layout = "no";
 
         spawn-at-startup = [
           (lib.getExe self'.packages.waybar)
@@ -26,6 +25,15 @@
         ];
 
         spawn-sh-at-startup = [ "${lib.getExe pkgs.wmname} LG3D" ];
+        input = {
+          focus-follows-mouse = _:{ };
+          keyboard.xkb.layout = "no";
+
+          touchpad = {
+            tap = _:{ };
+            click-method = "clickfinger";
+          };
+        };
 
         environment = {
           XDG_CURRENT_DESKTOP = "wlroots";

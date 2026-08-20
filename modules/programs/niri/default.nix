@@ -17,12 +17,11 @@
 
         outputs."eDP-1" = {
           mode = "2880x1920@120.030";
-          scale = 1;
           position = _: { props = { x = 1280; y = 0; }; };
         };
 
         spawn-at-startup = [
-          (lib.getExe pkgs.waybar)
+          (lib.getExe self'.packages.waybar)
           (lib.getExe' pkgs.awww "awww-daemon")
           (lib.getExe pkgs.dunst)
           (lib.getExe pkgs.kanshi)

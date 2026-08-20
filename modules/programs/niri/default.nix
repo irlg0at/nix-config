@@ -11,11 +11,20 @@
   perSystem = { pkgs, lib, scheme, self', ... }: {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
-      # Output config is managed by nwg-displays, which writes to
-      # ~/.config/niri/monitor.kdl; pull it in (optional so niri is fine
-      # before the file exists) and let it override anything above it.
       extraSettings = [ { include = [ { optional = true; } "~/.config/niri/monitor.kdl" ]; } ];
       settings = {
+
+        window-rules = [ 
+          {
+            matches = [
+              {
+                app-id="nwg-displays";
+              }
+            ];
+            open-floating = true;
+            open-focused = true;
+          }
+        ];
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
         spawn-at-startup = [

@@ -12,6 +12,7 @@
         zathura
         ranger
         claude-code
+        alsa-utils
     ];
   };  
 }

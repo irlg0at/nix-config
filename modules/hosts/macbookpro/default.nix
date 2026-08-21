@@ -12,6 +12,7 @@
       theme
       kitty
       fuzzel
+      mako
       swaylock
       neovim
       nushell

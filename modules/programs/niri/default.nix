@@ -30,7 +30,7 @@
         spawn-at-startup = [
           (lib.getExe self'.packages.waybar)
           (lib.getExe self'.packages.wallpaper)
-          (lib.getExe pkgs.dunst)
+          (lib.getExe self'.packages.mako)
         ];
 
         spawn-sh-at-startup = [ "${lib.getExe pkgs.wmname} LG3D" ];

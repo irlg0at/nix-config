@@ -31,6 +31,7 @@
           (lib.getExe self'.packages.waybar)
           (lib.getExe self'.packages.wallpaper)
           (lib.getExe self'.packages.mako)
+          (lib.getExe pkgs.soteria)
         ];
 
         spawn-sh-at-startup = [ "${lib.getExe pkgs.wmname} LG3D" ];

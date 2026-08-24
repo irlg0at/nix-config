@@ -14,6 +14,10 @@
       extraSettings = [ { include = [ { optional = true; } "~/.config/niri/monitor.kdl" ]; } ];
       settings = {
 
+        hotkey-overlay = {
+          skip-at-startup = _:{ };
+        };
+
         window-rules = [ 
           {
             matches = [

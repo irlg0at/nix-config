@@ -19,7 +19,10 @@
       env.FONTCONFIG_FILE = fonts.fontconfigFile;
       settings = {
         modules-left = [ "niri/workspaces" ];
-        modules-right = ["battery" "cpu" "temperature" "backlight" "network" "clock"];
+        modules-right = ["battery" "cpu" "temperature" "backlight" "network"  "tray" "clock"];
+        network = {
+          format = "{ipaddr}";
+        };
       };
       "style.css".content = ''
         * {
@@ -31,6 +34,9 @@
           margin-left: 0;
           padding-right: 0.5rem;
           margin-right: 0;
+        }
+        #workspaces button {
+          min-width: 20px;
         }
 
         .modules-right > widget > * {
@@ -80,8 +86,12 @@
           background-color: #${scheme.base0E};
         }
 
-        #clock {
+        #tray {
           background-color: #${scheme.base0F};
+       }
+
+        #clock {
+          background-color: #${scheme.base08};
         }
       '';
     };

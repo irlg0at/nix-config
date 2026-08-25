@@ -8,6 +8,7 @@
       commonHosts
       ovenConfig
       ovenHardwareConfig
+      ly
       niri
       theme
       kitty

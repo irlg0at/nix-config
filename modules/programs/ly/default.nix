@@ -1,6 +1,6 @@
 { moduleWithSystem, ... }:
 {
-  flake.nixosModules.macbookproConfig = moduleWithSystem ({ scheme, ... }: { pkgs, ... }:
+  flake.nixosModules.ly = moduleWithSystem ({ scheme, ... }: { pkgs, ... }:
   let
     hex = c: "0x00${c}";
   in {

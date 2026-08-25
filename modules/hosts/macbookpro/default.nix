@@ -8,6 +8,7 @@
       commonHosts
       macbookproConfig
       macbookproHardwareConfig
+      ly
       niri
       theme
       kitty

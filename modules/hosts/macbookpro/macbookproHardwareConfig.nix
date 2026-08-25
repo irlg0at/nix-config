@@ -13,6 +13,10 @@ flake.nixosModules.macbookproHardwareConfig = { config, lib, modulesPath, ... }:
       { device = "/dev/disk/by-uuid/1c33cf57-5918-4063-b384-09378aa40404";
         fsType = "ext4";
       };
+    fileSystems."/boot" =
+      { device = "/dev/disk/by-uuid/1BE4-4D65";
+        fsType = "vfat";
+      };
 
     swapDevices = [ ];
 

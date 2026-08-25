@@ -9,13 +9,13 @@
     {
     environment.systemPackages = with pkgs; [
         ripgrep
-        zathura
         ranger
         claude-code
         alsa-utils
         zk
         taskwarrior3
         taskwarrior-tui
+        wireguard-tools
     ];
   };  
 }

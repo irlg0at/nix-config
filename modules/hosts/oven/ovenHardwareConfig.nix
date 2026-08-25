@@ -1,5 +1,5 @@
 {...}: {
-flake.nixosModules.macbookproHardwareConfig = { config, lib, modulesPath, ... }: {  
+flake.nixosModules.ovenHardwareConfig = { config, lib, modulesPath, ... }: {  
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];

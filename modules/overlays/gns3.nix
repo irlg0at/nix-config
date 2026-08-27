@@ -39,11 +39,12 @@ let
       # lives in the separate qtsvg output that Qt never searches, so node
       # symbols fail to render ("SVG not supported"). Put qtsvg's plugin dir on
       # QT_PLUGIN_PATH. Also make kitty (and the telnet client it launches)
-      # available so the console command resolves at runtime.
+      # available so the console command resolves at runtime, plus wireshark so
+      # link packet capture ("Start Wireshark") works out of the box.
       makeWrapperArgs = (old.makeWrapperArgs or [ ]) ++ [
         # Use the themed (wrapper-modules) kitty so node consoles share the
         # global base16 kitty config instead of the unwrapped nixpkgs kitty.
-        "--prefix PATH : ${final.lib.makeBinPath [ self.packages.${final.stdenv.hostPlatform.system}.kitty final.inetutils ]}"
+        "--prefix PATH : ${final.lib.makeBinPath [ self.packages.${final.stdenv.hostPlatform.system}.kitty final.inetutils final.wireshark ]}"
         "--prefix QT_PLUGIN_PATH : ${final.qt6.qtsvg}/${final.qt6.qtbase.qtPluginPrefix}"
       ];
     });

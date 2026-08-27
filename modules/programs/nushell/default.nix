@@ -29,14 +29,14 @@
   in {
     packages.nushell = inputs.wrapper-modules.wrappers.nushell.wrap {
       inherit pkgs;
-      prefixVar = [ { name = "shellDeps"; data = [ "PATH" ":" "${pkgs.lib.makeBinPath [ pkgs.zoxide pkgs.starship pkgs.bat ]}" ]; } ];
+      prefixVar = [ { name = "shellDeps"; data = [ "PATH" ":" "${pkgs.lib.makeBinPath [ pkgs.zoxide pkgs.starship ]}" ]; } ];
       env.STARSHIP_CONFIG = starshipConfig;
       env.BAT_THEME = "base16-256";
       "config.nu".content = ''
         $env.config.show_banner = false
         source ${zoxideInit}
         use ${starshipInit}
-        alias cat = bat --paging=never
+        alias cat = ${pkgs.lib.getExe pkgs.bat} --paging=never
       '';
     };
   };

@@ -19,7 +19,7 @@
       env.FONTCONFIG_FILE = fonts.fontconfigFile;
       settings = {
         modules-left = [ "niri/workspaces" ];
-        modules-right = ["battery" "cpu" "temperature" "backlight" "network"  "tray" "clock"];
+        modules-right = ["battery" "cpu" "temperature" "backlight" "network" "tray" "clock"];
         network = {
           format = "{ipaddr}";
         };

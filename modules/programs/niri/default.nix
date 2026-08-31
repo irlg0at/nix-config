@@ -1,6 +1,5 @@
 { inputs, moduleWithSystem, ... }: {
 
-
   flake.nixosModules.niri = moduleWithSystem ({ self', ... }: { ... }: {
     programs.niri = {
       enable = true;
@@ -51,12 +50,6 @@
             tap = _:{ };
             click-method = "clickfinger";
           };
-        };
-
-        environment = {
-          XDG_CURRENT_DESKTOP = "wlroots";
-          XDG_SESSION_TYPE = "wayland";
-          XDG_SESSION_DESKTOP = "wlroots";
         };
 
         layout = {

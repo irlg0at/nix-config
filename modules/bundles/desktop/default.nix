@@ -10,6 +10,7 @@
       vivaldi
       gns3-gui
       vesktop
+      protonmail-desktop
     ];
   }; 
 }

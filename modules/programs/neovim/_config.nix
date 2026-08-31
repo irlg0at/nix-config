@@ -21,6 +21,7 @@
     ./_plugins/jupytext.nix
     ./_plugins/quarto.nix
     ./_plugins/undotree.nix
+    ./_plugins/img-clip.nix
   ];
 
   colorschemes.catppuccin.enable = true;

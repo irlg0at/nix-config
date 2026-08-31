@@ -10,7 +10,7 @@
 
   perSystem = { pkgs, lib, scheme, self', ... }:
   let
-    screenshot = ''set -e; d="$(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/Screenshots"; mkdir -p "$d"; ${lib.getExe pkgs.grim} -t ppm -g "$(${lib.getExe pkgs.slurp} -o -d -F monospace)" - | ${lib.getExe pkgs.satty} --filename - --copy-command=${pkgs.wl-clipboard}/bin/wl-copy --annotation-size-factor 2.0 --output-filename="$d/Screenshot from %Y-%m-%d %H:%M:%S.png" --actions-on-enter="save-to-clipboard,exit" --brush-smooth-history-size=5 --disable-notifications'';
+    screenshot = ''g="$(${lib.getExe pkgs.slurp} -o)" && ${lib.getExe pkgs.grim} -g "$g" - | ${lib.getExe pkgs.satty} -f - --copy-command=${pkgs.wl-clipboard}/bin/wl-copy --output-filename "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H:%M:%S.png" --actions-on-enter="save-to-clipboard,exit"'';
   in {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
@@ -76,7 +76,7 @@
           "Mod+P".spawn-sh = lib.getExe self'.packages.fuzzel;
           "Mod+Shift+P".spawn-sh = lib.getExe self'.packages.swaylock;
           "Mod+Shift+D".spawn-sh = lib.getExe pkgs.nwg-displays;
-          "Print".spawn-sh = screenshot;
+          "Mod+S".spawn-sh = screenshot;
 
           # Move windows
           "Mod+Shift+C".close-window = _:{ };

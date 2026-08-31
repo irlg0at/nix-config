@@ -4,6 +4,10 @@
     powerManagement.powertop.enable = true;
     services.upower.enable = true;
 
+    services.udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{power/control}="on"
+    '';
+
     systemd.services.battery-charge-limit = {
       description = "Limit battery charge to 80%";
       wantedBy = [ "multi-user.target" ];

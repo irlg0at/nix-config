@@ -8,7 +8,10 @@
     };
   });
 
-  perSystem = { pkgs, lib, scheme, self', ... }: {
+  perSystem = { pkgs, lib, scheme, self', ... }:
+  let
+    screenshot = ''set -e; d="$(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/Screenshots"; mkdir -p "$d"; ${lib.getExe pkgs.grim} -t ppm -g "$(${lib.getExe pkgs.slurp} -o -d -F monospace)" - | ${lib.getExe pkgs.satty} --filename - --copy-command=${pkgs.wl-clipboard}/bin/wl-copy --annotation-size-factor 2.0 --output-filename="$d/Screenshot from %Y-%m-%d %H:%M:%S.png" --actions-on-enter="save-to-clipboard,exit" --brush-smooth-history-size=5 --disable-notifications'';
+  in {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       extraSettings = [ { include = [ { optional = true; } "~/.config/niri/monitor.kdl" ]; } ];
@@ -73,6 +76,7 @@
           "Mod+P".spawn-sh = lib.getExe self'.packages.fuzzel;
           "Mod+Shift+P".spawn-sh = lib.getExe self'.packages.swaylock;
           "Mod+Shift+D".spawn-sh = lib.getExe pkgs.nwg-displays;
+          "Print".spawn-sh = screenshot;
 
           # Move windows
           "Mod+Shift+C".close-window = _:{ };

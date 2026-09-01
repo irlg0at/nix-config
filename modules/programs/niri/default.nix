@@ -90,6 +90,22 @@
           "Mod+Ctrl+K".move-window-up = _:{ };
           "Mod+Ctrl+L".move-column-right = _:{ };
 
+          # Move between screens
+          "Mod+Comma".focus-monitor-previous = _:{ };
+          "Mod+Period".focus-monitor-next = _:{ };
+          "Mod+Shift+Comma".move-column-to-monitor-previous = _:{ };
+          "Mod+Shift+Period".move-column-to-monitor-next = _:{ };
+
+          # Backlight
+          "XF86MonBrightnessUp" = _:{
+            props.allow-when-locked = true;
+            content.spawn-sh = "${lib.getExe pkgs.brightnessctl} --class=backlight set +10%";
+          };
+          "XF86MonBrightnessDown" = _:{
+            props.allow-when-locked = true;
+            content.spawn-sh = "${lib.getExe pkgs.brightnessctl} --class=backlight set 10%-";
+          };
+
           # Switch Workspace
           "Mod+1".focus-workspace = 1;
           "Mod+2".focus-workspace = 2;

@@ -47,5 +47,8 @@
   services.fprintd.enable = true;
   security.pam.services.sudo.fprintAuth = true;
   
+  users.users.g0at = {
+    extraGroups = [ "dialout" ];
+    }; 
   };
 }

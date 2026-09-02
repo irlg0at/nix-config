@@ -1,10 +1,11 @@
 { inputs, moduleWithSystem, ... }: {
 
-  flake.nixosModules.niri = moduleWithSystem ({ self', ... }: { ... }: {
+  flake.nixosModules.niri = moduleWithSystem ({ self',pkgs, ... }: { ... }: {
     programs.niri = {
       enable = true;
       package = self'.packages.niri;
     };
+    environment.systemPackages = with pkgs; [ wl-clipboard ];
   });
 
   perSystem = { pkgs, lib, scheme, self', ... }:

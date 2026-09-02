@@ -3,7 +3,9 @@
   plugins = {
     vimtex = {
       enable = true;
-    	texlivePackage = (pkgs.texliveMedium.withPackages (ps: with ps;[]));
+    	texlivePackage = (pkgs.texliveMedium.withPackages (ps: with ps;[
+    		  appendix biber biblatex comment csquotes gensymb ps.import minted tocbibind wrapfig
+    		]));
 			settings = {
 				view_method = "zathura";
         fold_enabled = 1;

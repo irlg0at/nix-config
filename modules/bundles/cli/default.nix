@@ -15,6 +15,7 @@
         zk
         wireguard-tools
         vja
+        p7zip
     ];
   };  
 }

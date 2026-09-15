@@ -35,6 +35,7 @@
     enable = true;
     servers = {
       ruff.enable = true;
+      tinymist.enable = true;
       pyright.enable = true;
       rust_analyzer = {
         enable = true;

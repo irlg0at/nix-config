@@ -16,5 +16,6 @@
   nixpkgs.config.allowUnfree = true;
   networking.firewall.enable = true;
   system.stateVersion = "24.11"; # Did you read the comment?
+  hardware.keyboard.qmk.enable = true;
   });
 }

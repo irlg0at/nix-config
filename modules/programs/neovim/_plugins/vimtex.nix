@@ -4,7 +4,7 @@
     vimtex = {
       enable = true;
     	texlivePackage = (pkgs.texliveMedium.withPackages (ps: with ps;[
-    		  appendix biber biblatex comment csquotes gensymb ps.import minted tocbibind wrapfig
+    		  appendix biber biblatex comment csquotes gensymb ps.import minted tocbibind wrapfig preprint 
     		]));
 			settings = {
 				view_method = "zathura";

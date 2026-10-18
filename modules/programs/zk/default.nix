@@ -1,9 +1,10 @@
-{ inputs, moduleWithSystem, ... }: {
+{ inputs, moduleWithSystem, pkgs, ... }: {
   flake.nixosModules.zk = moduleWithSystem ({ self', ... }: {
-    environment.systemPackages = [ self'.packages.zk ];
+    environment.systemPackages = [ self'.packages.zk pkgs.fzf ];
   });
 
   perSystem = { pkgs, ... }: {
+
     packages.zk = inputs.wrapper-modules.lib.wrapPackage ({ config, ... }: {
       inherit pkgs;
       package = pkgs.zk;

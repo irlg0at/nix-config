@@ -11,6 +11,7 @@
       gns3-gui
       vesktop
       protonmail-desktop
+      zotero
     ];
   }; 
 }

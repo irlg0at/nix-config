@@ -1,5 +1,5 @@
-{ inputs, moduleWithSystem, pkgs, ... }: {
-  flake.nixosModules.zk = moduleWithSystem ({ self', ... }: {
+{ inputs, moduleWithSystem, ... }: {
+  flake.nixosModules.zk = moduleWithSystem ({ self', pkgs, ... }: {
     environment.systemPackages = [ self'.packages.zk pkgs.fzf ];
   });
 

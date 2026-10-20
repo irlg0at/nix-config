@@ -3,16 +3,13 @@
   plugins = {
     treesitter = {
       enable = true;
-			nixGrammars = true;
-			settings = {
-				highlight = {
-					enable = true;
-          disable = [ "latex" ];
-					additional_vim_regex_highlighting = ["latex" "markdown"];
-				};
-				indent.enable = true;
-			  	};
-  	};
-	};
+      nixGrammars = true;
+      highlight = {
+        enable = true;
+        disable = [ "latex" ];
+        enableVimSyntax = [ "latex" "markdown" ];
+      };
+      indent.enable = true;
+    };
+  };
 }
-

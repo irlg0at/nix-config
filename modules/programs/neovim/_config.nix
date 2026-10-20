@@ -22,6 +22,7 @@
     ./_plugins/quarto.nix
     ./_plugins/undotree.nix
     ./_plugins/img-clip.nix
+    ./_plugins/zotcite.nix
   ];
 
   colorschemes.catppuccin.enable = true;

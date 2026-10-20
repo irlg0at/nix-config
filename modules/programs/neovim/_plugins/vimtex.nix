@@ -3,9 +3,17 @@
   plugins = {
     vimtex = {
       enable = true;
-    	texlivePackage = (pkgs.texliveMedium.withPackages (ps: with ps;[
-    		  appendix biber biblatex comment csquotes gensymb ps.import minted tocbibind wrapfig preprint 
-    		]));
+      texlivePackage = (pkgs.texliveMedium.withPackages (ps: with ps; [
+      appendix biber biblatex comment csquotes gensymb ps.import minted tocbibind wrapfig preprint
+      ieeetran ieeeconf ieeepes
+
+      biblatex-ieee ccaption enumitem multirow needspace xurl
+
+      algorithms algorithmicx amsmath amsfonts amscls babel babel-english booktabs
+      geometry graphics hyperref iftex listings lm mathtools microtype pdfpages eso-pic
+      psnfss helvetic setspace tools url xcolor
+      luatextra xltxtra
+    ]));
 			settings = {
 				view_method = "zathura";
         fold_enabled = 1;

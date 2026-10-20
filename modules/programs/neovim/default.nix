@@ -17,7 +17,7 @@
         modules = [
           config.flake.nixvimModules.default
           {
-            nixpkgs.pkgs = import inputs.nixpkgs_stable {
+            nixpkgs.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
             };

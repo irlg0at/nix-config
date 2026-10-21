@@ -8,7 +8,8 @@
       systemd-boot.configurationLimit = 3;
     };
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxPackages;
+    hardware.framework.enableKmod = false;
     networking.hostName = "macbookpro"; # Define your hostname.
 
     # Enable networking
@@ -40,7 +41,7 @@
     # };
 
     # Enables VM-ware workstation to work
-    virtualisation.vmware.host.enable = true;
+    # virtualisation.vmware.host.enable = true;
 
     # Fingerprint reader
     services.fprintd.enable = true;

@@ -44,14 +44,20 @@ let
       makeWrapperArgs = (old.makeWrapperArgs or [ ]) ++ [
         # Use the themed (wrapper-modules) kitty so node consoles share the
         # global base16 kitty config instead of the unwrapped nixpkgs kitty.
-        "--prefix PATH : ${
+        "--prefix"
+        "PATH"
+        ":"
+        "${
           final.lib.makeBinPath [
             self.packages.${final.stdenv.hostPlatform.system}.kitty
             final.inetutils
             final.wireshark
           ]
         }"
-        "--prefix QT_PLUGIN_PATH : ${final.qt6.qtsvg}/${final.qt6.qtbase.qtPluginPrefix}"
+        "--prefix"
+        "QT_PLUGIN_PATH"
+        ":"
+        "${final.qt6.qtsvg}/${final.qt6.qtbase.qtPluginPrefix}"
       ];
     });
   };

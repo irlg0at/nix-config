@@ -17,6 +17,8 @@
         vesktop
         protonmail-desktop
         zotero
+        plex-desktop
+        plexamp
       ];
     };
 }

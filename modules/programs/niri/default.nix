@@ -71,6 +71,7 @@
           "Mod+Shift+P".spawn-sh = lib.getExe self'.packages.swaylock;
           "Mod+Shift+D".spawn-sh = lib.getExe pkgs.nwg-displays;
           "Mod+S".spawn-sh = screenshot;
+          "Mod+O".toggle-overview = _:{ };
 
           # Move windows
           "Mod+Shift+C".close-window = _:{ };

@@ -17,5 +17,10 @@
   networking.firewall.enable = true;
   system.stateVersion = "24.11"; # Did you read the comment?
   hardware.keyboard.qmk.enable = true;
+
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
   });
 }

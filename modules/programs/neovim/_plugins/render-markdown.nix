@@ -1,4 +1,4 @@
-{  ... }:
+{ ... }:
 {
   plugins = {
     render-markdown = {

@@ -1,17 +1,18 @@
 {
   ...
-}: {
+}:
+{
 
-  flake.nixosModules.python = {
-    pkgs,
-    ...
-  }:
+  flake.nixosModules.python =
     {
-    environment.systemPackages = with pkgs; [
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
         python3
         virtualenv
         pyenv
-    ];
-  };  
+      ];
+    };
 }
-

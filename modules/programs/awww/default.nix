@@ -1,9 +1,13 @@
 { ... }: {
 
-  perSystem = {pkgs, ...}: {
+  perSystem = { pkgs, ... }: {
     packages.wallpaper = pkgs.writeShellApplication {
       name = "wallpaper";
-      runtimeInputs = [ pkgs.awww pkgs.coreutils pkgs.findutils ];
+      runtimeInputs = [
+        pkgs.awww
+        pkgs.coreutils
+        pkgs.findutils
+      ];
       text = ''
         wallpapers=${./wallpapers}
 

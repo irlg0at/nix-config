@@ -2,25 +2,29 @@
   moduleWithSystem,
   inputs,
   ...
-}: {
+}:
+{
 
-  flake.nixosModules.tmux = moduleWithSystem ({
-    self',
-    ...
-  }: {
-    environment.systemPackages = with self'.packages; [
+  flake.nixosModules.tmux = moduleWithSystem (
+    {
+      self',
+      ...
+    }:
+    {
+      environment.systemPackages = with self'.packages; [
         tmux
-    ];
-  });
-  
-  perSystem = {pkgs, ...}: {
+      ];
+    }
+  );
+
+  perSystem = { pkgs, ... }: {
     packages.tmux = inputs.wrapper-modules.wrappers.tmux.wrap {
       inherit pkgs;
       allowPassthrough = true;
       visualActivity = false;
-			terminal = "tmux-256color";
-			escapeTime = 300;
-			modeKeys = "vi";
+      terminal = "tmux-256color";
+      escapeTime = 300;
+      modeKeys = "vi";
       vimVisualKeys = true;
     };
   };

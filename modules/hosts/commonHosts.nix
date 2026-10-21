@@ -1,26 +1,34 @@
 { moduleWithSystem, ... }: {
-  flake.nixosModules.commonHosts = moduleWithSystem ({ self', ... }: {lib, pkgs, ...}: {
+  flake.nixosModules.commonHosts = moduleWithSystem (
+    { self', ... }: { lib, pkgs, ... }: {
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  services.xserver.xkb = {
-    layout = "no";
-    variant = "";
-  };
-  console.keyMap = "no";
-  users.users.g0at = {
-    isNormalUser = true;
-    description = "g0at";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = lib.getExe self'.packages.nushell;
-  };
-  nixpkgs.config.allowUnfree = true;
-  networking.firewall.enable = true;
-  system.stateVersion = "24.11"; # Did you read the comment?
-  hardware.keyboard.qmk.enable = true;
+      nix.settings.experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      services.xserver.xkb = {
+        layout = "no";
+        variant = "";
+      };
+      console.keyMap = "no";
+      users.users.g0at = {
+        isNormalUser = true;
+        description = "g0at";
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+        ];
+        shell = lib.getExe self'.packages.nushell;
+      };
+      nixpkgs.config.allowUnfree = true;
+      networking.firewall.enable = true;
+      system.stateVersion = "24.11"; # Did you read the comment?
+      hardware.keyboard.qmk.enable = true;
 
-  security.pki.caCertificateBlacklist = [
-    "Comodo AAA Services root"
-    "emSign ECC Root CA - G3"
-  ];
-  });
+      security.pki.caCertificateBlacklist = [
+        "Comodo AAA Services root"
+        "emSign ECC Root CA - G3"
+      ];
+    }
+  );
 }

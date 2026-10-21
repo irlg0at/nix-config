@@ -1,8 +1,8 @@
 { ... }:
 {
-	plugins = {
-		ltex-extra = {
-			enable = true;
-		};
-	};
+  plugins = {
+    ltex-extra = {
+      enable = true;
+    };
+  };
 }

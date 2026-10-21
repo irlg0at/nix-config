@@ -2,18 +2,22 @@
   moduleWithSystem,
   inputs,
   ...
-}: {
+}:
+{
 
-  flake.nixosModules.swaylock = moduleWithSystem ({
-    self',
-    ...
-  }: {
-    environment.systemPackages = with self'.packages; [
+  flake.nixosModules.swaylock = moduleWithSystem (
+    {
+      self',
+      ...
+    }:
+    {
+      environment.systemPackages = with self'.packages; [
         swaylock
-    ];
-  });
+      ];
+    }
+  );
 
-  perSystem = {pkgs, scheme, ...}: {
+  perSystem = { pkgs, scheme, ... }: {
     packages.swaylock = inputs.wrapper-modules.wrappers.swaylock.wrap {
       inherit pkgs;
       package = pkgs.swaylock-effects;

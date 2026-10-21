@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 {
   extraPackages = with pkgs; [
     python3Packages.jupytext
@@ -7,11 +7,11 @@
     jupytext = {
       enable = true;
       settings = {
-      custom_language_formatting = {
-        python = {
-          extension = "md";
-          style = "markdown";
-          force_ft = "markdown";
+        custom_language_formatting = {
+          python = {
+            extension = "md";
+            style = "markdown";
+            force_ft = "markdown";
           };
         };
       };
@@ -72,5 +72,5 @@
       nargs = 1,
       complete = 'file'
     })
-      '';
+  '';
 }

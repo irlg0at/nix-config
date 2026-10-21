@@ -1,4 +1,4 @@
-{  ... }:
+{ ... }:
 {
   plugins = {
     treesitter = {
@@ -7,7 +7,10 @@
       highlight = {
         enable = true;
         disable = [ "latex" ];
-        enableVimSyntax = [ "latex" "markdown" ];
+        enableVimSyntax = [
+          "latex"
+          "markdown"
+        ];
       };
       indent.enable = true;
     };

@@ -1,14 +1,14 @@
-{  ... }:
+{ ... }:
 {
   plugins = {
     luasnip = {
       enable = true;
-			settings = {
-				enable_autosnippets = true;
-			};
-			fromLua = [
-				{paths = ./snippets;}
-			];
+      settings = {
+        enable_autosnippets = true;
+      };
+      fromLua = [
+        { paths = ./snippets; }
+      ];
     };
   };
 }

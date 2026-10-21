@@ -2,18 +2,22 @@
   moduleWithSystem,
   inputs,
   ...
-}: {
+}:
+{
 
-  flake.nixosModules.git = moduleWithSystem ({
-    self',
-    ...
-  }: {
-    environment.systemPackages = with self'.packages; [
+  flake.nixosModules.git = moduleWithSystem (
+    {
+      self',
+      ...
+    }:
+    {
+      environment.systemPackages = with self'.packages; [
         gat
-    ];
-  });
-  
-  perSystem = {pkgs, ...}: {
+      ];
+    }
+  );
+
+  perSystem = { pkgs, ... }: {
     packages.gat = inputs.wrapper-modules.wrappers.git.wrap {
       inherit pkgs;
       settings = {
@@ -23,4 +27,3 @@
     };
   };
 }
-

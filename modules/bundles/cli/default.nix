@@ -1,13 +1,15 @@
 {
   ...
-}: {
+}:
+{
 
-  flake.nixosModules.cli = {
-    pkgs,
-    ...
-  }:
+  flake.nixosModules.cli =
     {
-    environment.systemPackages = with pkgs; [
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
         ripgrep
         ranger
         claude-code
@@ -16,7 +18,6 @@
         wireguard-tools
         vja
         p7zip
-    ];
-  };  
+      ];
+    };
 }
-

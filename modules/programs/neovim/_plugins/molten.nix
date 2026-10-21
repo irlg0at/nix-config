@@ -1,4 +1,4 @@
-{  ... }:
+{ ... }:
 {
   plugins.molten = {
     enable = true;
@@ -14,7 +14,12 @@
       image_provider = "none";
       output_crop_border = true;
       output_virt_lines = false;
-      output_win_border = [ "" "━" "" "" ];
+      output_win_border = [
+        ""
+        "━"
+        ""
+        ""
+      ];
       output_win_hide_on_leave = true;
       output_win_max_height = 15;
       output_win_max_width = 80;
@@ -27,11 +32,11 @@
   };
 
   keymaps = [
-		{
-			key = "<leader>os";
-			action = ":noautocmd MoltenEnterOutput<CR>";
-			options.desc = "show/enter output";
-		}
+    {
+      key = "<leader>os";
+      action = ":noautocmd MoltenEnterOutput<CR>";
+      options.desc = "show/enter output";
+    }
 
   ];
 }

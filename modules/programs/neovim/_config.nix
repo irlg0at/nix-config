@@ -23,6 +23,7 @@
     ./_plugins/undotree.nix
     ./_plugins/img-clip.nix
     ./_plugins/zotcite.nix
+    ./_plugins/csvview.nix
   ];
 
   colorschemes.catppuccin.enable = true;

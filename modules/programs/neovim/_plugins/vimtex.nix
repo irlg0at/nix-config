@@ -25,6 +25,9 @@
             ieeetran
             ieeeconf
             ieeepes
+            glossaries-extra
+            glossaries-english
+            datatool-english
 
             biblatex-ieee
             ccaption

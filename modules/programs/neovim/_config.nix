@@ -6,7 +6,10 @@
     ./_plugins/whichkey.nix
     ./_plugins/render-markdown.nix
     ./_plugins/mkdnflow.nix
-    ./_plugins/nvim-tree.nix
+    # ./_plugins/nvim-tree.nix
+    ./_plugins/oil.nix
+    ./_plugins/harpoon.nix
+    ./_plugins/conform.nix
     ./_plugins/vimtex.nix
     ./_plugins/zk.nix
     ./_plugins/telescope.nix

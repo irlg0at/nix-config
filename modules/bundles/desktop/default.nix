@@ -19,6 +19,7 @@
         zotero
         plex-desktop
         plexamp
+        beeper
       ];
     };
 }

@@ -11,6 +11,7 @@
       texlivePackage = (
         pkgs.texliveMedium.withPackages (
           ps: with ps; [
+            cleveref
             appendix
             biber
             biblatex

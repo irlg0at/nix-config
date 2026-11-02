@@ -57,6 +57,7 @@
             (lib.getExe self'.packages.mako)
             (lib.getExe pkgs.soteria)
             (lib.getExe pkgs.stasis)
+            (lib.getExe pkgs.sunsetr)
           ];
 
           spawn-sh-at-startup = [ "${lib.getExe pkgs.wmname} LG3D" ];

@@ -22,6 +22,7 @@
       waybar
       desktop
       cli
+      ntnu-vpn
       python
       git
       gns3Overlay

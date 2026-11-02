@@ -22,6 +22,7 @@
       waybar
       desktop
       cli
+      ntnu-vpn
       git
       zathura
     ];

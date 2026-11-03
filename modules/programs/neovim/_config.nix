@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./_plugins/blink.nix
@@ -63,6 +63,7 @@
       ltex = {
         enable = true;
         settings.ltex.language = "en-US";
+        package = pkgs.ltex-ls-plus;
       };
     };
   };

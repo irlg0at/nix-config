@@ -11,6 +11,7 @@
     ./_plugins/harpoon.nix
     ./_plugins/conform.nix
     ./_plugins/vimtex.nix
+    ./_plugins/overleaf.nix
     ./_plugins/zk.nix
     ./_plugins/telescope.nix
     ./_plugins/treesitter.nix

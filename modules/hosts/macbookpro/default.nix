@@ -23,6 +23,7 @@
       desktop
       cli
       ntnu-vpn
+      overleaf-sync
       python
       git
       gns3Overlay

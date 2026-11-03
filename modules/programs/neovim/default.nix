@@ -10,13 +10,14 @@
   flake.nixvimModules.default = ./_config.nix;
 
   perSystem =
-    { system, ... }:
+    { system, self', ... }:
     {
       nixvimConfigurations.neovim = inputs.nixvim.lib.evalNixvim {
         inherit system;
         modules = [
           config.flake.nixvimModules.default
           {
+            _module.args.overleafSync = self'.packages.overleaf-sync;
             nixpkgs.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;

@@ -52,6 +52,7 @@ let
             self.packages.${final.stdenv.hostPlatform.system}.kitty
             final.inetutils
             final.wireshark
+            final.tigervnc
           ]
         }"
         "--prefix"

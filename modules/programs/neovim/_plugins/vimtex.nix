@@ -29,6 +29,10 @@
             glossaries-extra
             glossaries-english
             datatool-english
+            tcolorbox
+            tikzfill
+            pdfcol
+            listingsutf8
 
             biblatex-ieee
             ccaption

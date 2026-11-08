@@ -42,6 +42,7 @@
 
     # Enables VM-ware workstation to work
     # virtualisation.vmware.host.enable = true;
+    virtualisation.docker.enable = true;
 
     # Fingerprint reader
     services.fprintd.enable = true;

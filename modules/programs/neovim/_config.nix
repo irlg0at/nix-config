@@ -63,8 +63,9 @@
       ccls.enable = true;
       ltex = {
         enable = true;
-        settings.ltex.language = "en-US";
+        settings.language = "en-US";
         package = pkgs.ltex-ls-plus;
+        cmd = [ (pkgs.lib.getExe' pkgs.ltex-ls-plus "ltex-ls-plus") ];
       };
     };
   };

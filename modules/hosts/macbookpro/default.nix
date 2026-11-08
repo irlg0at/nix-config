@@ -31,6 +31,7 @@
       zathura
       zk
       pentest
+      llm
     ];
   };
 }

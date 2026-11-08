@@ -23,6 +23,10 @@
       settings = {
         user.email = "34748847+irlg0at@users.noreply.github.com";
         user.name = "g0at";
+        credential."https://git.overleaf.com" = {
+          username = "git";
+          helper = "store";
+        };
       };
     };
   };
